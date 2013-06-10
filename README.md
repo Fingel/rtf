@@ -33,7 +33,6 @@ We don't want this site to become bloated or watered down. We want to keep it si
 
 ####Email: 
 When using email always try to use GPG encryption.
-All available collaborator's public PGP keys will be in the PGP keys file.
 
 * To Get on OSX: https://gpgtools.org
 * To Get on Windows: http://www.gpg4win.org/
