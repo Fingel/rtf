@@ -233,7 +233,7 @@ INSTALLED_APPS = (
 )
 
 FLEXI_TEMPLATES = (
-    (os.path.join('index.html'),'start'),
+    (os.path.join('home.html'),'start'),
 )
 
 # List of processors used by RequestContext to populate the context.
