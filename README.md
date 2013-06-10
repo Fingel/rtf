@@ -50,11 +50,13 @@ We currently have 3 irc channels:
 
 In the present moment we have ~2 teams:
 
-###1. WEB DEVELOPMENT:
+###1. Web Development Team 
 
-If you are a dev, Web Development will be currently worked on (this) repo.
+###2. PR/Content Team 
+(Use /media folder)
 
-###2. PR/Content Team
+###3. Graphic Design Team 
+(Use /media folder)
 
 
 ####Basic design:(In Progress)
