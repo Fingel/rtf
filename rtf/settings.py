@@ -224,6 +224,11 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     #"mezzanine.accounts",
     #"mezzanine.mobile",
+    "flexipage",
+)
+
+FLEXI_TEMPLATES = (
+    (os.path.join('index.html'),'start'),
 )
 
 # List of processors used by RequestContext to populate the context.
