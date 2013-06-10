@@ -1,4 +1,6 @@
 import os
+
+ALLOWED_HOSTS = ['.restorethefourth.net']
 ######################
 # MEZZANINE SETTINGS #
 ######################
