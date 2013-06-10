@@ -1,4 +1,4 @@
-
+import os
 ######################
 # MEZZANINE SETTINGS #
 ######################
@@ -122,7 +122,7 @@ SITE_ID = 1
 USE_I18N = False
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = os.environ.get('SECRET_KEY', None)
+SECRET_KEY = os.environ.get('SECRET_KEY', "foo")
 
 # Tuple of IP addresses, as strings, that:
 #   * See debug comments, when DEBUG is true
