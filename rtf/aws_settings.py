@@ -18,3 +18,6 @@ STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 COMPRESS_CSS_FILTERS = [
     'compressor.filters.css_default.CssAbsoluteFilter',
 ]
+STATIC_URL = S3_URL
+MEDIA_URL = STATIC_URL + "media/"
+ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
