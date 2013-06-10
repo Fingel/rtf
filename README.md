@@ -59,7 +59,7 @@ Now create a virtualenv:
 `mkvirtualenv restorethefourth`
 
 Install requirements:
-`pip install fourth/requirements.txt`
+`pip install -r fourth/requirements.txt`
 
 From the "fourth" directory, create a database:
 `./manage.py createdb`
