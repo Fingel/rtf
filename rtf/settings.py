@@ -312,6 +312,12 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 # }
 
 
+try:
+    from aws_settings import *
+except ImportError:
+    pass
+
+
 ##################
 # LOCAL SETTINGS #
 ##################
