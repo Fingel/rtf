@@ -110,7 +110,7 @@ LANGUAGE_CODE = "en"
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
 # are displayed for error pages. Should always be set to ``False`` in
 # production. Best set to ``True`` in local_settings.py
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', False)
 
 # Whether a user's session cookie expires when the Web browser is closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
@@ -122,7 +122,7 @@ SITE_ID = 1
 USE_I18N = False
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = "23661d12-5bdb-4665-a5be-3ccbad38fc0d110db338-466f-43a3-bf19-f65b83f462d2ea2c8cc8-0507-43ea-9c1f-21f38917c741"
+SECRET_KEY = os.environ.get('SECRET_KEY', None)
 
 # Tuple of IP addresses, as strings, that:
 #   * See debug comments, when DEBUG is true
