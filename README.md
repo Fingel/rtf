@@ -52,10 +52,10 @@ In the present moment we have ~2 teams:
 ###1. Web Development Team 
 
 ###2. PR/Content Team 
-(Use /media folder)
+* (Use /media folder)
 
 ###3. Graphic Design Team 
-(Use /media folder)
+* (Use /media folder)
 
 
 ####Basic design:(In Progress)
