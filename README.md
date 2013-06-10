@@ -41,9 +41,10 @@ All available collaborator's public PGP keys will be in the PGP keys file.
 
 ####IRC Channels:
 
-We currently have 2 irc channels:
+We currently have 3 irc channels:
 * General Discussion: http://webchat.snoonet.org/?channels=restorethefourth
 * Dev Discussion: http://webchat.snoonet.org/?channels=r4dev
+* Graphic Design Discussion:http://webchat.snoonet.org/?channels=r4design
 
 ##Teams:
 
