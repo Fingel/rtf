@@ -35,8 +35,7 @@ We don't want this site to become bloated or watered down. We want to keep it si
 When using email always try to use GPG encryption.
 
 * To Get on OSX: https://gpgtools.org
-* To Get on Windows: http://www.gpg4win.org/
-* To Get on Linux: https://www.apache.org/dev/openpgp.html
+* To Get on Windows & Linux: http://www.enigmail.net/
 
 ####IRC Channels:
 
