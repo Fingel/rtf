@@ -1,123 +1,119 @@
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
 {% load pages_tags mezzanine_tags i18n future staticfiles %}
-<head>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+        <meta name="description" content="{% block meta_description %}{% endblock %}">
+        <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+        <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
 
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width">
-<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
-<meta name="description" content="{% block meta_description %}{% endblock %}">
-<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
-<link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+        {% ifinstalled mezzanine.blog %}
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+            <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+        {% endifinstalled %}
 
-{% ifinstalled mezzanine.blog %}
-<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
-<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
-{% endifinstalled %}
+        {% compress css %}
+        <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+        <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+        <link rel="stylesheet" href="{% static "css/bootstrap-responsive.css" %}">
 
-{% compress css %}
-<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
-<link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
-<link rel="stylesheet" href="{% static "css/bootstrap-responsive.css" %}">
-{% if LANGUAGE_BIDI %}
-<link rel="stylesheet" href="{% static "css/rtl.css" %}">
-{% endif %}
-{% ifinstalled cartridge.shop %}
-<link rel="stylesheet" href="{% static "css/cartridge.css" %}">
-{% if LANGUAGE_BIDI %}
-<link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
-{% endif %}
-{% endifinstalled %}
-{% block extra_css %}{% endblock %}
-{% endcompress %}
+        {% if LANGUAGE_BIDI %}
+            <link rel="stylesheet" href="{% static "css/rtl.css" %}">
+        {% endif %}
 
-{% compress js %}
-<script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
-<script src="{% static "js/bootstrap.js" %}"></script>
-<script src="{% static "js/bootstrap-extras.js" %}"></script>
-{% block extra_js %}{% endblock %}
-{% endcompress %}
-<!--[if lt IE 9]>
-<script src="{% static "js/html5shiv.js" %}"></script>
-<![endif]-->
+        {% ifinstalled cartridge.shop %}
+            <link rel="stylesheet" href="{% static "css/cartridge.css" %}">
+            {% if LANGUAGE_BIDI %}
+                <link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
+            {% endif %}
+        {% endifinstalled %}
 
-{% block extra_head %}{% endblock %}
+        {% block extra_css %}{% endblock %}
+        {% endcompress %}
+        {% compress js %}
+        <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        <script src="{% static "js/bootstrap-extras.js" %}"></script>
+        {% block extra_js %}{% endblock %}
+        {% endcompress %}
+        <!--[if lt IE 9]>
+        <script src="{% static "js/html5shiv.js" %}"></script>
+        <![endif]-->
 
-</head>
-<body id="{% block body_id %}body{% endblock %}">
+        {% block extra_head %}{% endblock %}
+    </head>
+    <body id="{% block body_id %}body{% endblock %}">
 
-<div class="navbar navbar-fixed-top">
-<div class="navbar-inner">
-<div class="container">
-    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </a>
-    {% if settings.SITE_TITLE %}<a class="brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
-    {% if settings.SITE_TAGLINE %}<p class="navbar-text">{{ settings.SITE_TAGLINE }}</p>{% endif %}
-    <div class="nav-collapse">
-        {% search_form "all" %}
-        {% page_menu "pages/menus/dropdown.html" %}
-    </div>
-</div>
-</div>
-</div>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    {% if settings.SITE_TITLE %}<a class="brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
+                    {% if settings.SITE_TAGLINE %}<p class="navbar-text">{{ settings.SITE_TAGLINE }}</p>{% endif %}
+                    <div class="nav-collapse">
+                        {% search_form "all" %}
+                        {% page_menu "pages/menus/dropdown.html" %}
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div class="container">
+        <div class="container">
+            {% nevercache %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}" data-alert="alert">
+                    <a class="close" href="#" onclick="$(this).parent().fadeOut('fast'); return false;">×</a>{{ message }}
+                </div>
+            {% endfor %}
+            {% endnevercache %}
 
-{% nevercache %}
-{% for message in messages %}
-<div class="alert alert-{{ message.tags }}" data-alert="alert">
-    <a class="close" href="#" onclick="$(this).parent().fadeOut('fast'); return false;">×</a>{{ message }}
-</div>
-{% endfor %}
-{% endnevercache %}
+            <h1>{% block title %}{% endblock %}</h1>
 
+            <ul class="breadcrumb">
+                {% spaceless %}
+                {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
+                {% endspaceless %}
+            </ul>
+        </div>
 
-<h1>{% block title %}{% endblock %}</h1>
+        <div class="container">
+            <div class="row">
 
-<ul class="breadcrumb">
-{% spaceless %}
-{% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
-{% endspaceless %}
-</ul>
+                <div class="span2 left">
+                    {% block left_panel %}
+                    <div class="panel tree">{% page_menu "pages/menus/tree.html" %}</div>
+                    {% endblock %}
+                </div>
 
-</div>
+                <div class="span7 middle">
+                    {% block main %}{% endblock %}
+                </div>
 
-<div class="container">
-<div class="row">
+                <div class="span3 right">
+                    {% nevercache %}
+                    {% include "includes/user_panel.html" %}
+                    {% endnevercache %}
+                    <div class="panel">
+                        {% block right_panel %}
+                        {% endblock %}
+                    </div>
+                </div>
 
-<div class="span2 left">
-    {% block left_panel %}
-    <div class="panel tree">{% page_menu "pages/menus/tree.html" %}</div>
-    {% endblock %}
-</div>
+            </div>
+        </div>
 
-<div class="span7 middle">
-    {% block main %}{% endblock %}
-</div>
+        <footer>
+            <div class="container">
+                {% page_menu "pages/menus/footer.html" %}
+            </div>
+        </footer>
 
-<div class="span3 right">
-    {% nevercache %}
-    {% include "includes/user_panel.html" %}
-    {% endnevercache %}
-    <div class="panel">
-    {% block right_panel %}
-    {% endblock %}
-    </div>
-</div>
-
-</div>
-</div>
-
-<footer>
-<div class="container">
-{% page_menu "pages/menus/footer.html" %}
-</div>
-</footer>
-
-{% include "includes/footer_scripts.html" %}
-
-</body>
+        {% include "includes/footer_scripts.html" %}
+    </body>
 </html>
