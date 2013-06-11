@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
         <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
         <link rel="stylesheet" href="{% static "css/bootstrap-responsive.css" %}">
+        <link rel="stylesheet" href="{{STATIC_URL}}css/r4.css" type="text/css" media="screen">
 
         {% if LANGUAGE_BIDI %}
             <link rel="stylesheet" href="{% static "css/rtl.css" %}">
@@ -46,7 +47,7 @@
     </head>
     <body id="{% block body_id %}body{% endblock %}">
 
-        <div class="navbar navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -54,16 +55,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    {% if settings.SITE_TITLE %}<a class="brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
-                    {% if settings.SITE_TAGLINE %}<p class="navbar-text">{{ settings.SITE_TAGLINE }}</p>{% endif %}
+                    <div class="pull-right">
+                        {% if settings.SITE_TITLE %}<a class="brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
+                    </div>
                     <div class="nav-collapse">
+                        {% comment %}
                         {% search_form "all" %}
+                        {% endcomment %}
                         {% page_menu "pages/menus/dropdown.html" %}
                     </div>
                 </div>
             </div>
         </div>
 
+        {% block message_container %}
         <div class="container">
             {% nevercache %}
             {% for message in messages %}
@@ -75,16 +80,19 @@
 
             <h1>{% block title %}{% endblock %}</h1>
 
+            {% block breadcrumbs %}
             <ul class="breadcrumb">
                 {% spaceless %}
                 {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
                 {% endspaceless %}
             </ul>
+            {% endblock %}
         </div>
+        {% endblock %}
 
+        {% block stage %}
         <div class="container">
             <div class="row">
-
                 <div class="span2 left">
                     {% block left_panel %}
                     <div class="panel tree">{% page_menu "pages/menus/tree.html" %}</div>
@@ -104,14 +112,16 @@
                         {% endblock %}
                     </div>
                 </div>
-
             </div>
         </div>
+        {% endblock %}
 
         <footer>
+            {% block footer %}
             <div class="container">
                 {% page_menu "pages/menus/footer.html" %}
             </div>
+            {% endblock %}
         </footer>
 
         {% include "includes/footer_scripts.html" %}

@@ -1,0 +1,19 @@
+.masthead {
+    background-image: url(../img/solid_bg.png), url(../img/pattern.png);
+    background-position: left top, left top;
+    background-repeat: repeat, repeat;
+    border-bottom: 1px solid #78b5da;
+}
+.featured {
+    text-align: center;
+}
+.featured img {
+    margin: 20px 0;
+    box-shadow: none;
+}
+.brand {
+    text-indent: -9999px;
+    background: url(../img/small_logo.png) center center no-repeat;
+    width: 32px;
+    height: 27px;
+}

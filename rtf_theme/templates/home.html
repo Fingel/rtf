@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load mezzanine_tags %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+{% block message_container %}{% endblock %}
+
+{% block stage %}
+<div class="masthead">
+    <div class="container">
+        <div class="row">
+            <div class="span12 featured">
+                {% editable flexi_featured_homepage_area.content %}
+                    <img src="{{STATIC_URL}}img/large_logo.png" alt="restore the fourth logo">
+                    {{ flexi_featured_homepage_area.content|richtext_filter|safe }}
+                {% endeditable %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="span6">
+                {% editable flexi_left_content_area.content %}
+                    {{ flexi_left_content.content|richtext_filter|safe }}
+                {% endeditable %}
+            </div>
+            <div class="span6">
+                {% editable flexi_right_content_area.content %}
+                    {{ flexi_right_content.content|richtext_filter|safe }}
+                {% endeditable %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
