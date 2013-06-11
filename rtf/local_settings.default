@@ -21,3 +21,4 @@ DATABASES = {
 STATIC_URL = "/static/"
 MEDIA_URL = STATIC_URL + "media/"
 ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
