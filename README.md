@@ -47,7 +47,7 @@ We currently have 3 irc channels:
 
 ##Teams:
 
-In the present moment we have ~2 teams:
+In the present moment we have ~3 teams:
 
 ###1. Web Development Team
 
@@ -56,15 +56,6 @@ In the present moment we have ~2 teams:
 
 ###3. Graphic Design Team
 * (Use /media folder)
-
-
-####Basic design:(In Progress)
-
-1. A Basic Home/landing page with the list of bills by ID and name, perhaps a short description to help identfy their intent.
-
-#### What we don't want to do:
-
-We don't want this site to become bloated or watered down. We want to keep it simple and get it up and running quickly to support what's going on in reddit. We want to chose a technology that more than one or two people know so we've got a base that can work on it.
 
 ## Available domain names
 * restorethefourth.us
