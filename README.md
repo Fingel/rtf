@@ -31,7 +31,7 @@ We don't want this site to become bloated or watered down. We want to keep it si
 
 ###COMMUNICATION:
 
-####Email: 
+####Email:
 When using email always try to use GPG encryption.
 
 * To Get on OSX: https://gpgtools.org
@@ -49,12 +49,12 @@ We currently have 3 irc channels:
 
 In the present moment we have ~2 teams:
 
-###1. Web Development Team 
+###1. Web Development Team
 
-###2. PR/Content Team 
+###2. PR/Content Team
 * (Use /media folder)
 
-###3. Graphic Design Team 
+###3. Graphic Design Team
 * (Use /media folder)
 
 
@@ -73,7 +73,7 @@ We don't want this site to become bloated or watered down. We want to keep it si
 * restorethefourthamendment.com
 * restorethefourth.net
 
-###Current Domain Names online: 
+###Current Domain Names online:
 * http://www.restorethefourth.net/
 
 
@@ -88,6 +88,9 @@ Now create a virtualenv:
 
 Install requirements:
 `pip install -r fourth/requirements.txt`
+
+Create your local_settings.py file
+`cp rtf/local_settings.default rtf/local_settings.py`
 
 From the "fourth" directory, create a database:
 `./manage.py createdb`
