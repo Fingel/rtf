@@ -1,97 +1,71 @@
 restorethefourth.website
 ========================
 
-##GENERAL INFO:
-
-See here for a list of planned July 4th, 2013 protests organized by State.
-We do NOT condone violence in any way. Posts or comments inciting violence are subject to removal.
-If you agree with these demands, then please subscribe:
-By exercising our right to vote and peacefully protest, the removal from office of any official in government who acted against our fourth amendment rights. No apologies, no amends, simply removal from office.
-
-Repeal the patriot act and other similar laws. If our currently elected representatives will not do so (highly unlikely), than we shall in the course of time elect those who will.
-
-The implementation of a transparent government which respects the fourth amendment and represents the interests of the people of the United States of America.
-
-
 ###ABOUT THIS REPO:
 
-official/currently used for designing/developing the restorethefourth.net website.
-The official website wether it be restoretheforth, restorethe4th.com, or others will desided until due notice.
+Official repo for designing/developing the restorethefourth.net website.
 For now, the basic wireframe, layout, and information will be worked on.
 
-This repo was made in direction and response with http://www.reddit.com/r/restorethefourth/
+This repo was made in direction and response with [http://www.reddit.com/r/restorethefourth/](http://www.reddit.com/r/restorethefourth/)
 
-####Basic design:(In Progress)
+# Getting up to speed.
 
-1. A Basic Home/landing page with the list of bills by ID and name, perhaps a short description to help identfy their intent.
+We're using [Django](https://www.djangoproject.com). If you aren't familiar it's very well documented.
+
+### How to run the dev site on OS X (should work on Linux as well)
+This is mostly command line stuff:
+
+If you plan on contributing code you should fork the repo, I will assume you are familiar with that process.
+
+First, make a directory for the project
+    
+    mkdir restorethefourth
+
+Now clone the repo, it will clone into a directory named rtf, for the sake of convenience rename this directory to fourth.
+
+    git clone https://github.com/100010001/rtf.git
+    mv rtf fourth
+
+
+Make sure you've [installed virtualenv](https://jamiecurle.co.uk/blog/installing-pip-virtualenv-and-virtualenvwrapper-on-os-x/).
+
+Now create a virtualenv:
+
+    virtualenv venv
+
+Install requirements:
+
+    pip install -r fourth/requirements.txt
+
+Create your local_settings.py file
+
+    cp fourth/rtf/local_settings.default fourth/rtf/local_settings.py
+
+From the "fourth" directory, create a database:
+    
+    ./manage.py createdb
+
+Now run the server:
+    
+    ./manage.py runserver
+
+The dev site is now your browser:
+[http://localhost:8000](http://localhost:8000)
+
+###COMMUNICATION:
+
+####IRC Channels:
+
+The Dev channel is #r4dev on irc.snoonet.org
+The general channel is #restorethefourth on irc.snoonet.org
+
+## Goals and Plans
 
 #### What we don't want to do:
 
 We don't want this site to become bloated or watered down. We want to keep it simple and get it up and running quickly to support what's going on in reddit. We want to chose a technology that more than one or two people know so we've got a base that can work on it.
 
-###COMMUNICATION:
-
-####Email:
-When using email always try to use GPG encryption.
-
-* To Get on OSX: https://gpgtools.org
-* To Get on Windows & Linux: http://www.enigmail.net/
-
-####IRC Channels:
-
-We currently have 3 irc channels:
-* General Discussion: http://webchat.snoonet.org/?channels=restorethefourth
-* Dev Discussion: http://webchat.snoonet.org/?channels=r4dev
-* Graphic Design Discussion: http://webchat.snoonet.org/?channels=r4design
-* Marketing Discussion: http://webchat.snoonet.org/?channels=r4marketing
-
-##Teams:
-
-In the present moment we have ~3 teams:
-
-###1. Web Development Team
-
-###2. PR/Marketing Team
-* (Use /resources folder)
-
-###3. Graphic Design Team
-* (Use /resources folder)
-
-## Available domain names
-* restorethefourth.us
-* restorethe4th.com
-* restorethe4th.la
-* restorethefourthamendment.com
-* restorethefourth.net
 
 ###Current Domain Names online:
-* http://www.restorethefourth.net/
 
-
-## MEZZANINE BASELINE PROJECT
-### How to run the dev site on OS X
-This is mostly command line stuff:
-
-First off [install virtualenv wrapper](https://jamiecurle.co.uk/blog/installing-pip-virtualenv-and-virtualenvwrapper-on-os-x/).
-
-Now create a virtualenv:
-`mkvirtualenv restorethefourth`
-
-Install requirements:
-`pip install -r fourth/requirements.txt`
-
-Create your local_settings.py file
-`cp rtf/local_settings.default rtf/local_settings.py`
-
-From the "fourth" directory, create a database:
-`./manage.py createdb`
-
-Now run the server:
-`./manage.py runserver`
-
-In your browser:
-http://localhost:8000
-
-### Before deploying
-
-* Change value of settings.SECRET_KEY
+* [restorethefourth.net](http://www.restorethefourth.net/)
