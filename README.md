@@ -35,15 +35,15 @@ We don't want this site to become bloated or watered down. We want to keep it si
 When using email always try to use GPG encryption.
 
 * To Get on OSX: https://gpgtools.org
-* To Get on Windows: http://www.gpg4win.org/
-* To Get on Linux: https://www.apache.org/dev/openpgp.html
+* To Get on Windows & Linux: http://www.enigmail.net/
 
 ####IRC Channels:
 
 We currently have 3 irc channels:
 * General Discussion: http://webchat.snoonet.org/?channels=restorethefourth
 * Dev Discussion: http://webchat.snoonet.org/?channels=r4dev
-* Graphic Design Discussion:http://webchat.snoonet.org/?channels=r4design
+* Graphic Design Discussion: http://webchat.snoonet.org/?channels=r4design
+* Marketing Discussion: http://webchat.snoonet.org/?channels=r4marketing
 
 ##Teams:
 
@@ -51,7 +51,7 @@ In the present moment we have ~3 teams:
 
 ###1. Web Development Team
 
-###2. PR/Content Team
+###2. PR/Marketing Team
 * (Use /resources folder)
 
 ###3. Graphic Design Team
