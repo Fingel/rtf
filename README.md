@@ -1,7 +1,7 @@
 restorethefourth.website
 ========================
 
-###ABOUT THIS REPO:
+### About this repo:
 
 Official repo for designing/developing the restorethefourth.net website.
 For now, the basic wireframe, layout, and information will be worked on.
@@ -72,9 +72,9 @@ Great, bring it up in our irc channel #r4dev on irc.snoonet.org, if the develope
 
 Github has some great tutorials that should get you up to speed [here](https://help.github.com/articles/set-up-git)
 
-##COMMUNICATION:
+## Communication:
 
-####IRC Channels:
+#### IRC Channels:
 
 The Dev channel is #r4dev on irc.snoonet.org
 The general channel is #restorethefourth on irc.snoonet.org
@@ -86,7 +86,7 @@ The general channel is #restorethefourth on irc.snoonet.org
 We don't want this site to become bloated or watered down. We want to keep it simple and get it up and running quickly to support what's going on in reddit. We want to chose a technology that more than one or two people know so we've got a base that can work on it.
 
 
-###Current Domain Names online:
+### Current Domain Names online:
 
 * [restorethefourth.net](http://www.restorethefourth.net/)
 
