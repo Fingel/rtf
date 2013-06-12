@@ -42,7 +42,8 @@ When using email always try to use GPG encryption.
 We currently have 3 irc channels:
 * General Discussion: http://webchat.snoonet.org/?channels=restorethefourth
 * Dev Discussion: http://webchat.snoonet.org/?channels=r4dev
-* Graphic Design Discussion:http://webchat.snoonet.org/?channels=r4design
+* Graphic Design Discussion: http://webchat.snoonet.org/?channels=r4design
+* Marketing Discussion: http://webchat.snoonet.org/?channels=r4marketing
 
 ##Teams:
 
@@ -50,7 +51,7 @@ In the present moment we have ~3 teams:
 
 ###1. Web Development Team
 
-###2. PR/Content Team
+###2. PR/Marketing Team
 * (Use /resources folder)
 
 ###3. Graphic Design Team
