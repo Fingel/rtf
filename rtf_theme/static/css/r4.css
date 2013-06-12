@@ -7,6 +7,11 @@
 .featured {
     text-align: center;
 }
+.navbar-inverse .extra img,
+.featured img {
+    box-shadow: none;
+    margin-top: 6px;
+}
 .featured img {
     margin: 20px 0;
     box-shadow: none;
@@ -16,4 +21,20 @@
     background: url(../img/small_logo.png) center center no-repeat;
     width: 32px;
     height: 27px;
+}
+.navbar-inverse .extra .pull-left {
+    margin: 8px 10px 0 0 !important;
+}
+.navbar-inverse .extra .pull-left .flag1 {
+    color: #ed2200;
+}
+.navbar-inverse .extra .pull-left .flag2 {
+    color: #fff;
+}
+.navbar-inverse .extra .pull-left .flag3 {
+    color: #0083b8;
+}
+.navbar-inverse .extra {
+    background-color: #000;
+    padding: 0 25px;
 }
