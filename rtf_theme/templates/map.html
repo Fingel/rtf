@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
-<titleRestore the Fourth | Events</title>
+<titleRestore the Fourth</title>
 
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="/static/css/font-awesome.min.css" rel="stylesheet">
 
 <style>
     #body {
@@ -63,16 +63,16 @@
     }
 </style>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="/static/js/jquery/1.10.1/jquery.min.js"></script>
 <script src="//maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true&amp;libraries=places"></script>
 
 <script>
     // hardcoded list of locations
     var locations = [
-        {address: 'Bronx, NY', info: 'In the Bronx, let\'s do this.'},
-        {address: 'Cleveland, OH', info: 'Cleveland\'s got it going on this July 4<sup>th</sup>!'},
-        {address: 'Dallas, TX', info: 'Dallas wants to see Big Brother go bye-bye.'},
-        {address: 'Las Vegas, NV', info: 'The people of Vegas are tired of gambling away their privacy.'}
+        {address: 'Bronx, NY', 		info: 'In the Bronx, let\'s do this.'},
+        {address: 'Cleveland, OH', 	info: 'Cleveland\'s got it going on this July 4<sup>th</sup>!'},
+        {address: 'Dallas, TX', 	info: 'Dallas wants to see Big Brother go bye-bye.'},
+        {address: 'Las Vegas, NV',  info: 'The people of Vegas are tired of gambling away their privacy.'}
     ];
 
     // map class
@@ -229,7 +229,7 @@
     <div id="infoWindowTemplate">
         <div class="infoWindow">
             <div style="float: left;">
-                <img class="logo" src="static/logo.png" alt="Restore the Fourth">
+                <img class="logo" src="/static/img/small_logo.png" alt="Restore the Fourth">
             </div>
             <div style="float: left; max-width: 200px;">
                 <strong>{location}</strong><br><br>
