@@ -52,7 +52,27 @@ Now run the server:
 The dev site is now your browser:
 [http://localhost:8000](http://localhost:8000)
 
-###COMMUNICATION:
+# FAQ, Communications, Goals and Plans
+
+## FAQ
+
+* Why aren't we using Google Analytics?/We shouldn't use Google Analytics/Should we use Google analytics?
+
+This has come up several times in IRC. There is an open ticket [here](https://github.com/100010001/rtf/issues/3) and you are welcome to discuss.
+
+* I can't code but I'm a designer/marketer/have ideas.
+
+Great, please check [reddit.com/r/restorethefourth](https://reddit.com/r/restorethefourth) and join #restorethefourth on irc.snoonet.org
+
+* I have a suggestion to bring to the developers.
+
+Great, bring it up in our irc channel #r4dev on irc.snoonet.org, if the developers think it's in scope then open or have a developer open an issue on the github repo.
+
+* I'm new to this whole git thing, where is a good place to get started?
+
+Github has some great tutorials that should get you up to speed [here](https://help.github.com/articles/set-up-git)
+
+##COMMUNICATION:
 
 ####IRC Channels:
 
@@ -69,3 +89,15 @@ We don't want this site to become bloated or watered down. We want to keep it si
 ###Current Domain Names online:
 
 * [restorethefourth.net](http://www.restorethefourth.net/)
+
+
+# About Restore the Fourth
+
+The best place to read about what restore the fourth stands for is [on reddit.](http://www.reddit.com/r/restorethefourth) We are focussed on these three things:
+
+
+1. By exercising our right to vote and peaceful protest, the removal from office of any official in government who acted against our fourth amendment rights. No apologies, no amends, simply removal from office. They have betrayed their oath to protect and defend the constitution, and must be removed.
+
+2. Repeal the patriot act and other similar laws. If our currently elected representatives will not do so (highly unlikely), than we shall in the course of time elect those who will.
+
+3. The implementation of a transparent government which respects the fourth amendment and represents the interests of the people of the United States of America.
