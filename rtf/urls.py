@@ -17,6 +17,9 @@ urlpatterns = patterns("",
     # admin interface, which would be marginally more secure.
     ("^admin/", include(admin.site.urls)),
 
+	# just parking the map somewhere for now to see it reply
+	url("^map/", direct_to_template, {"template": "map.html"}, name="map"),
+
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
 
@@ -42,7 +45,7 @@ urlpatterns = patterns("",
     # "/.html" - so for this case, the template "pages/index.html"
     # should be used if you want to customize the homepage's template.
 
-    # url("^$", "mezzanine.pages.views.page", {"slug": "/"}, name="home"),
+    #url("^$", "mezzanine.pages.views.page", {"slug": "/"}, name="home"),
 
     # HOMEPAGE FOR A BLOG-ONLY SITE
     # -----------------------------
