@@ -5,7 +5,7 @@ import os
 ####################
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
 AWS_PRELOAD_METADATA = True
-AWS_CLOUDFRONT_DOMAIN = 'rt4.s3.amazonaws.com'
+AWS_CLOUDFRONT_DOMAIN = 'restorethefourth.s3.amazonaws.com'
 AWS_S3_SECURE_URLS = False
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', "")
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', "")
