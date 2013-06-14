@@ -201,6 +201,8 @@
                             infoWindow.setContent(content);
                             infoWindow.open(map, marker);
                         });
+                    } else {
+                    	alert("Geocode was not successful for the following reason: " + status);
                     }
                 });
             });
