@@ -76,10 +76,10 @@ Github has some great tutorials that should get you up to speed [here](https://h
 
 #### IRC Channels:
 
-The Dev channel is on #r4dev on irc.snoonet.org
-The general channel is on #restorethefourth on irc.snoonet.org
-The Design/Graphics channel is on #r4design on irc.snoonet.org
-The Marketing channel is on r4marketing no irc.snoonet.org
+* The Dev channel is on #r4dev on irc.snoonet.org
+* The general channel is on #restorethefourth on irc.snoonet.org
+* The Design/Graphics channel is on #r4design on irc.snoonet.org
+* The Marketing channel is on r4marketing on irc.snoonet.org
 
 ## Goals and Plans
 
