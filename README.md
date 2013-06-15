@@ -62,7 +62,7 @@ This has come up several times in IRC. There is an open ticket [here](https://gi
 
 * I can't code but I'm a designer/marketer/have ideas.
 
-Great, please check [reddit.com/r/restorethefourth](https://reddit.com/r/restorethefourth) and join #restorethefourth on irc.snoonet.org
+Great, please check [reddit.com/r/restorethefourth](https://reddit.com/r/restorethefourth) and join #restorethefourth on irc.snoonet.org.
 
 * I have a suggestion to bring to the developers.
 
@@ -76,8 +76,10 @@ Github has some great tutorials that should get you up to speed [here](https://h
 
 #### IRC Channels:
 
-The Dev channel is #r4dev on irc.snoonet.org
-The general channel is #restorethefourth on irc.snoonet.org
+The Dev channel is on #r4dev on irc.snoonet.org
+The general channel is on #restorethefourth on irc.snoonet.org
+The Design/Graphics channel is on #r4design on irc.snoonet.org
+The Marketing channel is on r4marketing no irc.snoonet.org
 
 ## Goals and Plans
 
