@@ -1,6 +1,7 @@
 
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from rtf import views
 
 from mezzanine.core.views import direct_to_template
 
@@ -19,6 +20,10 @@ urlpatterns = patterns("",
 
 	# just parking the map somewhere for now to see it reply
 	url("^map/", direct_to_template, {"template": "map.html"}, name="map"),
+	
+	#Protests page
+	url("^protests/$", views.protests, name="protests"),
+	url("^protests/(?P<protest_id>\d+)/$", views.protest, name="protest"),
 
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
