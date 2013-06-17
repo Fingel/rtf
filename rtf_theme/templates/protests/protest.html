@@ -26,10 +26,31 @@
     <div class="row">
         <div class="span12">
             {% if protest %}
-            	{{ protest.id }} {{ protest.city }}
+            	<h1>{{ protest.state }} > {{ protest.city }} </h1>
+		<ul>
+			<li><b>Location:</b> {{protest.location}}</li>
+			<li><b>Date:</b> {{protest.date}}</li>
+			<li><b>Time:</b> {{protest.time}}</li>
+			{% if protest.organizer %}
+				<li><b>Organizer:</b> {{protest.organizer}}</li>
+			{% endif %}
+			{% if protest.reddit_page %}
+				<li><a href="{{protest.reddit_page}}">Reddit</a></li>
+			{% endif %}
+			{% if protest.fb_page %}
+				<li><a href="{{protest.fb_page}}">Facebook<a/></li>
+			{% endif %}
+			{% if protest.twitter %}
+				<li><a href="{{protest.twitter}}">Twitter</a></li>
+			{% endif %}
+			{% if protest.other %}
+				<li><b>Other:</b> {{protest.other}}</li>
+			{% endif %}
+		</ul>
             {% else %}
             	<p>No protest! :(</p>
             {% endif %}
+            <p><a href="/protests">&lt;&lt; Protests</a></p>
         </div>
     </div>
 </div>

@@ -26,15 +26,35 @@
     <div class="row">
         <div class="span12">
             {% if protest_list %}
-            	<ul>
-            	{% for protest in protest_list %}
-            		<li><a href="/protests/{{ protest.id }}/">{{ protest.city }}</a></li>
-            	{% endfor %}
-            	</ul>
+            	<table id="protest_table">
+            		<thead>
+            			<tr>
+            				<td>State</td>
+            				<td>City</td>
+            				<td>Date</td>
+            				<td>More Info</td>
+            			</tr>
+            		</thead>
+            		<tbody>
+		    	{% for protest in protest_list %}
+		    		<tr>
+		    			<td>{{ protest.state }}</td>
+		    			<td>{{ protest.city }}</td>
+		    			<td>{{ protest.date }}</td>
+		    			<td><a href="/protests/{{ protest.id }}/">Link</a></td>
+		    		</tr>
+		    	{% endfor %}
+		    	</tbody>
+		</table>
             {% else %}
             	<p>No protests! :(</p>
             {% endif %}
         </div>
     </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#protest_table').dataTable();
+});
+</script>
 {% endblock %}
