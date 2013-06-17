@@ -31,14 +31,12 @@
 			<li><b>Location:</b> {{protest.location}}</li>
 			<li><b>Date:</b> {{protest.date}}</li>
 			<li><b>Time:</b> {{protest.time}}</li>
-			{% if protest.organizer %}
-				<li><b>Organizer:</b> {{protest.organizer}}</li>
-			{% endif %}
+
 			{% if protest.reddit_page %}
 				<li><a href="{{protest.reddit_page}}">Reddit</a></li>
 			{% endif %}
 			{% if protest.fb_page %}
-				<li><a href="{{protest.fb_page}}">Facebook<a/></li>
+				<li><a href="{{protest.fb_page}}">Facebook</a></li>
 			{% endif %}
 			{% if protest.twitter %}
 				<li><a href="{{protest.twitter}}">Twitter</a></li>
