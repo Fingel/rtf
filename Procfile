@@ -1,1 +1,1 @@
-web: gunicorn rtf.wsgi
+web: newrelic-admin run-program gunicorn rtf.wsgi

@@ -7,7 +7,7 @@ from time import sleep
 
 class Protest(models.Model):
 	def __str__(self):
-		return self.city
+		return "{0}, {1}".format(self.state, self.city)
 		
 	WE_HAVE_IT = 'We have it'
 	REQUESTED = 'Requested'
