@@ -30,6 +30,5 @@ def recalclatlong(request):
 	for protest in protests:
 		protest.generateLatLong()
 		protest.save()
-		sleep(.5)
 	context = {'protest_list' : protests}
 	return render(request, 'protests/protests.html', context)

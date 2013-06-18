@@ -44,6 +44,7 @@ class Protest(models.Model):
 					place, (lat, lng) = g.geocode("{0} {1}".format(self.state, self.city), exactly_one=False)[0]
 				self.latitude = lat
 				self.longitude = lng
+				sleep(.5)
 				print("Stored for city {0} lat {1} long {2}".format(self.city, self.latitude, self.longitude))
 	
 @receiver(pre_save, sender=Protest)
