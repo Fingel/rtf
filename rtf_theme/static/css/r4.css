@@ -42,3 +42,52 @@
 	max-width: none;
 	box-shadow: none;
 }
+
+
+.icon-warning-sign {
+	color: #f00;
+}
+
+#search {
+	margin-bottom: 10px;
+	padding: 10px;
+	border: solid 1px #ccc;
+}
+
+#search input[type="text"] {
+box-sizing: border-box;
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+#search a {
+	text-decoration: none;
+}
+
+#search a img {
+	vertical-align: middle;
+}
+
+#search .status {
+	margin-left: 20px;
+}
+
+#map {
+	height: 600px;
+}
+
+#infoWindowTemplate {
+	display: none;
+}
+
+#map .infoWindow {
+	padding: 10px 0;
+}
+
+#map img.logo {
+	width: 100px;
+	padding-right: 20px;
+	vertical-align: text-top;
+}

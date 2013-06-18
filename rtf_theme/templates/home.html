@@ -34,8 +34,200 @@
                 {% endeditable %}
             </div>
         </div>
-    </div>
+	
+    </div>  
+    
 </div>
+<div class="container">
+	<div class="row">
+		<div class="span12">
+	    		<center><h1>Find a Protest in Your Area</h1></center>
+	    		<div id="map"></div>
+	    		<div id="infoWindowTemplate">
+				<div class="infoWindow">
+		    			<div style="float: left;">
+		        			<img class="logo" src="{{STATIC_URL}}img/small_logo.png" alt="Restore the Fourth">
+		    			</div>
+		    			<div style="float: left; max-width: 200px;">
+		        			<strong>{location}</strong><br><br>
+		        			<a href="/protests/{info}">More Info</a>
+		    			</div>
+				</div>
+	    		</div>
+		</div>   
+	</div>
+</div>
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true&amp;libraries=places"></script>
+<script type="text/javascript">
+// hardcoded list of locations
+    var locations = 
+    	[
+    ];
+
+    // map class
+    function EventsMap () {
+        var instance = this;
+        var $mapElem = $('#map');
+        var $search  = $('#search input[type="text"]');
+
+        // create map, center it on the US
+        var map = new google.maps.Map($mapElem[0], {
+            zoom:       4,
+            center:     new google.maps.LatLng(37, -98),
+            mapTypeId:  google.maps.MapTypeId.ROADMAP
+        });
+
+        // geocoder for address <=> coords conversions
+        var geocoder = new google.maps.Geocoder();
+
+        // create single info window for marker popups
+        var infoWindow = new google.maps.InfoWindow({
+            content: ''
+        });
+
+        // info window template
+        var infoWindowTemplate = $('#infoWindowTemplate').html();
+
+        // search input autocomplete
+        var searchAutocomplete = new google.maps.places.Autocomplete($search[0]);
+        searchAutocomplete.bindTo('bounds', map);
+
+        // user has triggered new map search
+        google.maps.event.addListener(searchAutocomplete, 'place_changed', function () {
+            var place = searchAutocomplete.getPlace();
+
+            // match chosen from autocomplete list
+            if (place.geometry) {
+                map.panTo(place.geometry.location);
+                map.setZoom(9);
+            }
+
+            // manual text submission - fuzzy search
+            else {
+                // get lat/long of the address
+                geocoder.geocode({address: $search.val()}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.panTo(results[0].geometry.location);
+                        map.setZoom(9);
+
+                        $search.val(results[0].formatted_address);
+                    } else {
+                        instance.displaySearchStatus('<i class="icon-warning-sign"></i> Unable to find a location matching your search.');
+                    }
+                });
+            }
+        });
+
+        // center map on user's current location
+        this.centerOnGeolocation = function () {
+            if (navigator.geolocation) {
+                instance.displaySearchStatus('<i class="icon-spinner icon-spin"></i> Detecting... the browser may ask for your permission.');
+
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+                    map.panTo(pos);
+                    map.setZoom(9);
+
+                    // fill search box with named location
+                    geocoder.geocode({latLng: pos}, function(results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            // multiple zoom locations returned, filter out names which are too specific
+                            var goodLocations = $.grep(results, function (result) {
+                                return $.inArray('political', result.types) > -1;
+                            });
+
+                            var address = goodLocations.length > 0 ? goodLocations[0].formatted_address : (
+                                    results.length > 0 ? results[0].formatted_address : ''
+                                    );
+
+                            $search.val(address);
+                        } else {
+                            instance.displaySearchStatus('<i class="icon-warning-sign"></i> Unable to determine current location. Please search or zoom manually.');
+                        }
+                    });
+
+                    instance.displaySearchStatus('');
+                }, function () {
+                    instance.displaySearchStatus('<i class="icon-warning-sign"></i> Unable to determine current location. Please search or zoom manually.');
+                }, {timeout: 5000});
+            } else {
+                instance.displaySearchStatus('<i class="icon-warning-sign"></i> Your browser does not support geolocation. Please search or zoom manually.');
+            }
+        };
+
+        this.displaySearchStatus = function (status) {
+            $status = $search.nextAll('.status').html(status);
+            setTimeout(function () { $status.html(''); }, 5000);
+        };
+
+        // plot new markers on the map, make them interactive
+        this.plotStaticMarkers = function(data){
+        	$.each(data, function (i, location) {
+        		var latlng = new google.maps.LatLng(location.fields.latitude, location.fields.longitude);
+        		var marker = new google.maps.Marker({
+                            map:        map,
+                            position:   latlng,
+                            title:      location.fields.city
+                        });
+                        
+                        google.maps.event.addListener(marker, 'click', function () {
+                            var content = infoWindowTemplate
+                                    .replace('{location}', location.fields.city)
+                                    .replace('{info}', location.pk);
+
+                            infoWindow.setContent(content);
+                            infoWindow.open(map, marker);
+                        });
+        	})
+        }
+        this.plotMarkers = function (locations) {
+            $.each(locations, function (i, location) {
+                // get address coords
+                geocoder.geocode({address: location.address}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        // plot the marker
+                        var marker = new google.maps.Marker({
+                            map:        map,
+                            position:   results[0].geometry.location,
+                            title:      location.address
+                        });
+
+                        // event for opening info window
+                        google.maps.event.addListener(marker, 'click', function () {
+                            var content = infoWindowTemplate
+                                    .replace('{location}', location.address)
+                                    .replace('{info}', location.info);
+
+                            infoWindow.setContent(content);
+                            infoWindow.open(map, marker);
+                        });
+                    } else {
+                    	alert("Geocode was not successful for the following reason: " + status);
+                    }
+                });
+            });
+        }
+    }
+
+    // initialize
+    $(function () {
+        var map = new EventsMap();
+	$.getJSON('/protests.json', function(data){
+		map.plotStaticMarkers(data);
+	});
+        
+
+        $('#search').on('submit', function (e) {
+            e.preventDefault();
+        });
+
+        $('#search a').on('click', function (e) {
+            e.preventDefault();
+            map.centerOnGeolocation();
+        });
+    });
+</script>
 {% endblock %}
 
 {% block footer %}
