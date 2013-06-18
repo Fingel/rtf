@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from geopy import geocoders
+from time import sleep
 
 class Protest(models.Model):
 	def __str__(self):
