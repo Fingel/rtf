@@ -1,16 +1,20 @@
 {% extends "base.html" %}
-{% load i18n %}
-{% load mezzanine_tags %}
+{% load mezzanine_tags keyword_tags %}
 
-{% block meta_title %}{% trans "Home" %}{% endblock %}
-{% block title %}{% trans "Home" %}{% endblock %}
+{% block meta_title %}{{ page.meta_title }}{% endblock %}
 
-{% block breadcrumb_menu %}
-<li class="active">{% trans "Home" %}</li>
-{% endblock %}
+{% block meta_keywords %}{% metablock %}
+{% keywords_for page as keywords %}
+{% for keyword in keywords %}
+    {% if not forloop.first %}, {% endif %}
+    {{ keyword }}
+{% endfor %}
+{% endmetablock %}{% endblock %}
 
+{% block meta_description %}{% metablock %}
+{{ page.description }}
+{% endmetablock %}{% endblock %}
 {% block message_container %}{% endblock %}
-
 {% block stage %}
 <div class="masthead">
     <div class="container">
