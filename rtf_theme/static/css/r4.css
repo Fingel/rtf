@@ -23,7 +23,7 @@
     height: 27px;
 }
 .navbar-inverse .extra .pull-left {
-    margin: 8px 10px 0 0 !important;
+    margin: 8px 3px 0 0 !important;
 }
 .navbar-inverse .extra .pull-left .flag1 {
     color: #ed2200;
@@ -126,3 +126,11 @@ html,
           padding-right: 20px;
         }
       }
+      
+.social-icon {
+	color: #6c6c6c;
+}
+
+.navbar > a:hover {
+	text-decoration: none;
+}

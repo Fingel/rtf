@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="{% static "css/bootstrap-responsive.css" %}">
         <link rel="stylesheet" href="{{STATIC_URL}}css/r4.css" type="text/css" media="screen">
         <link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap-datatables.css" type="text/css" media="screen">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
         {% if LANGUAGE_BIDI %}
             <link rel="stylesheet" href="{% static "css/rtl.css" %}">
@@ -59,8 +60,22 @@
 		                <span class="icon-bar"></span>
 		            </a>
 		            <div class="extra pull-right">
-		                <p class="pull-left"><a href="https://twitter.com/intent/tweet?button_hashtag=restorethe4th" title="twitter hashtag restore the fourth"><span class="flag1">#restore</span><span class="flag2">the</span><span class="flag3">4th</span></a></p>
-		                <a href="/"><img class="pull-right" src="{{STATIC_URL}}img/small_logo.png" alt=""></a>
+		                <p class="pull-left">
+		                	<a href="https://www.facebook.com/RestoreTheFourth" class="social-link">
+		                	<i class="icon-facebook icon-2x social-icon"></i></a>
+		                	<a href="https://twitter.com/Restore_the4th">
+		                	<i class="icon-twitter icon-2x social-icon"></i></a>
+		                	<a href="https://plus.google.com/u/0/b/107297615548710532075/">
+		                	<i class="icon-google-plus icon-2x social-icon" ></i></a>
+		                	</p>
+		                	
+		                
+		                <a href="http://www.reddit.com/r/restorethefourth">
+		                	<img class="social-img" src="{{STATIC_URL}}img/reddit.png" alt="reddit">
+		                </a>
+		                <a href="/">
+		                	<img class="social-img" src="{{STATIC_URL}}img/small_logo.png" alt="Home">
+		                </a>
 		            </div>
 		            <div class="nav-collapse">
 		                {% comment %}
@@ -97,13 +112,8 @@
 		{% block stage %}
 		<div class="container">
 		    <div class="row">
-		        <div class="span2 left">
-		            {% block left_panel %}
-		            <div class="panel tree">{% page_menu "pages/menus/tree.html" %}</div>
-		            {% endblock %}
-		        </div>
 
-		        <div class="span7 middle">
+		        <div class="span9 middle">
 		            {% block main %}{% endblock %}
 		        </div>
 
