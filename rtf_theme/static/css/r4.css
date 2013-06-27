@@ -152,3 +152,7 @@ html,
 	font-size: 1.2em;
 	margin-left: 5px;
 }
+
+#protest_data {
+	max-width: 640px;
+}

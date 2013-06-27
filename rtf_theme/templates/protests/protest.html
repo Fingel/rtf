@@ -7,7 +7,7 @@
         <div class="span8">
             	<h1>{{ protest.city }}, {{ protest.state }} </h1>
             	<div class="protest-info">
-			<div class="pull-left">
+			<div class="pull-left" id="protest_data">
 			{% if protest.location %}
 				<span class="protest_info"><i class="icon-map-marker icon-2x"></i> {{protest.location}}</span>
 			{% endif %}
@@ -21,7 +21,7 @@
 				<span class="protest_info"><i class="icon-male icon-2x"></i> {{protest.organizer}}</span>
 			{% endif %}
 			</div>
-			<div class="pull-right">
+			<div class="pull-right" id="protest_social">
 				{% if protest.reddit_page %}
 					<a href="{{protest.reddit_page}}"><img src="{{STATIC_URL}}img/social/reddit.png" /></a>
 				{% endif %}
