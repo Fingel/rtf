@@ -134,3 +134,21 @@ html,
 .navbar > a:hover {
 	text-decoration: none;
 }
+
+#protest_footer {
+	clear: both;
+}
+
+#protest_other {
+	clear: both;
+	padding: 7px;
+}
+
+.protest_info {
+	padding: 4px;
+}
+
+.back_link {
+	font-size: 1.2em;
+	margin-left: 5px;
+}

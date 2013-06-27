@@ -3,32 +3,42 @@
 {% block main %}
 <div class="container">
     <div class="row">
-        <div class="span12">
-            {% if protest %}
-            	<h1>{{ protest.state }} > {{ protest.city }} </h1>
-		<ul>
-			<li><b>Location:</b> {{protest.location}}</li>
-			<li><b>Date:</b> {{protest.date}}</li>
-			<li><b>Time:</b> {{protest.time}}</li>
+    {% if protest %}
+        <div class="span8">
+            	<h1>{{ protest.city }}, {{ protest.state }} </h1>
+            	<div class="protest-info">
+			<div class="pull-left">
+				<span class="protest_info"><i class="icon-map-marker icon-2x"></i> {{protest.location}}</span>
+				<span class="protest_info"><i class="icon-calendar icon-2x"></i> {{protest.date}}</span>
+				<span class="protest_info"><i class="icon-time icon-2x"></i> {{protest.time}}</span>
+				<span class="protest_info"><i class="icon-male icon-2x"></i> {{protest.organizer}}</span>
+			</div>
+			<div class="pull-right">
+				{% if protest.reddit_page %}
+					<a href="{{protest.reddit_page}}"><img src="{{STATIC_URL}}img/social/reddit.png" /></a>
+				{% endif %}
+				{% if protest.fb_page %}
+					<a href="{{protest.fb_page}}"><img src="{{STATIC_URL}}img/social/facebook.png" /></a>
+				{% endif %}
+				{% if protest.twitter %}
+					<a href="{{protest.twitter}}"><img src="{{STATIC_URL}}img/social/twitter.png" /></a>
+				{% endif %}
+			</div>
+		</div>
 
-			{% if protest.reddit_page %}
-				<li><a href="{{protest.reddit_page}}">Reddit</a></li>
-			{% endif %}
-			{% if protest.fb_page %}
-				<li><a href="{{protest.fb_page}}">Facebook</a></li>
-			{% endif %}
-			{% if protest.twitter %}
-				<li><a href="{{protest.twitter}}">Twitter</a></li>
-			{% endif %}
-			{% if protest.other %}
-				<li><b>Other:</b> {{protest.other}}</li>
-			{% endif %}
-		</ul>
-            {% else %}
-            	<p>No protest! :(</p>
-            {% endif %}
-            <p><a href="/protests">&lt;&lt; Protests</a></p>
+            <div id="protest_other" class="span7">
+            	{% if protest.other %}
+            		<p>{{protest.other}}</p>
+            	{% endif %}
+            </div>
+
+            <div id="protest_footer">
+            	<p><a href="/protests"><i class="icon-circle-arrow-left icon-large"></i><span class="back_link">All Protests</span></a></p>
+            </div>
         </div>
+        {% else %}
+        	<p>No protest! :(</p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
