@@ -21,7 +21,6 @@ def protest(request, protest_id):
 def protestsjson(request):
 	protest_list = Protest.objects.all()
 	data = serializers.serialize('json', protest_list)
-	print("hit this")
 	return HttpResponse(data, mimetype="application/json")
 
 @staff_member_required

@@ -156,3 +156,7 @@ html,
 #protest_data {
 	max-width: 640px;
 }
+
+#social_link_icon {
+	vertical-align:bottom;
+}
