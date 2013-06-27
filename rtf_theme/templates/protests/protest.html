@@ -8,10 +8,18 @@
             	<h1>{{ protest.city }}, {{ protest.state }} </h1>
             	<div class="protest-info">
 			<div class="pull-left">
+			{% if protest.location %}
 				<span class="protest_info"><i class="icon-map-marker icon-2x"></i> {{protest.location}}</span>
+			{% endif %}
+			{% if protest.date %}
 				<span class="protest_info"><i class="icon-calendar icon-2x"></i> {{protest.date}}</span>
+			{% endif %}
+			{% if protest.time %}
 				<span class="protest_info"><i class="icon-time icon-2x"></i> {{protest.time}}</span>
+			{% endif %}
+			{% if protest.organizer %}
 				<span class="protest_info"><i class="icon-male icon-2x"></i> {{protest.organizer}}</span>
+			{% endif %}
 			</div>
 			<div class="pull-right">
 				{% if protest.reddit_page %}
@@ -26,9 +34,9 @@
 			</div>
 		</div>
 
-            <div id="protest_other" class="span7">
+            <div id="protest_other" class="span8">
             	{% if protest.other %}
-            		<p>{{protest.other}}</p>
+            		{{protest.other|safe}}
             	{% endif %}
             </div>
 
