@@ -151,7 +151,6 @@ STATICFILES_FINDERS = (
 # Use Memcache in heroku prod, else local django in-memory cache
 # Configured based on https://devcenter.heroku.com/articles/django-memcache#start-using-memcache
 def get_cache():
-    import os
     try:
         os.environ['MEMCACHE_SERVERS'] = os.environ['MEMCACHIER_SERVERS']
         os.environ['MEMCACHE_USERNAME'] = os.environ['MEMCACHIER_USERNAME']
