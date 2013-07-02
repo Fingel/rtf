@@ -26,6 +26,9 @@ urlpatterns = patterns("",
 	url("^protests/(?P<protest_id>\d+)/$", views.protest, name="protest"),
 	url("^protests/recalclatlong/", views.recalclatlong, name="protests"),
 	url("^protests.json/$", views.protestsjson, name="protestsjson"),
+	
+	#blitz.io testing
+	url("^mu-8fe3bdc8-01cc3afb-cb5e87cd-be5e45d7", views.blitzio, name="blitzio"), 
 
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.

@@ -31,3 +31,6 @@ def recalclatlong(request):
 		protest.save()
 	context = {'protest_list' : protests}
 	return render(request, 'protests/protests.html', context)
+	
+def blitzio(request):
+	return HttpResponse("42")
