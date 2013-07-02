@@ -1,3 +1,4 @@
+django-pylibmc-sasl==0.2.4
 Django==1.5.1
 Mezzanine==1.4.7
 Pillow==2.0.0
