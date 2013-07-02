@@ -159,7 +159,7 @@ def get_cache():
             'default': {
                 'BACKEND': 'django_pylibmc.memcached.PyLibMCCache',
                 'LOCATION': os.environ['MEMCACHIER_SERVERS'],
-                'TIMEOUT': 500,
+                'TIMEOUT': 3600,
                 'BINARY': True,
             }
         }
