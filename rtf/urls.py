@@ -25,7 +25,7 @@ urlpatterns = patterns("",
 	url("^protests/$", views.protests, name="protests"),
 	url("^protests/(?P<protest_id>\d+)/$", views.protest, name="protest"),
 	url("^protests/recalclatlong/", views.recalclatlong, name="protests"),
-	url("^protests.json/$", views.protestsjson, name="protestsjson"),
+	url("^protests.json$", views.protestsjson, name="protestsjson"),
 
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
