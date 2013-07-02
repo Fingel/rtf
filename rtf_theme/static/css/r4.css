@@ -146,7 +146,6 @@ html,
 
 .protest_info {
 	padding: 4px;
-	white-space: nowrap;
 }
 
 .back_link {
@@ -155,9 +154,12 @@ html,
 }
 
 #protest_data {
-	max-width: 600px;
+	max-width: 640px;
 }
 
 #social_link_icon {
 	vertical-align:bottom;
+}
+#signup {
+  display: none;
 }
