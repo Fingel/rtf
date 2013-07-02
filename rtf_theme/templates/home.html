@@ -217,7 +217,7 @@
     // initialize
     $(function () {
         var map = new EventsMap();
-	$.getJSON('/protests.json', function(data){
+	$.getJSON('/protests.json/', function(data){
 		map.plotStaticMarkers(data);
 	});
         
