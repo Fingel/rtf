@@ -1,7 +1,7 @@
 import os
 
 ALLOWED_HOSTS = ['.restorethefourth.net',
-		 '.herokuapp.com']
+         '.herokuapp.com']
 ######################
 # MEZZANINE SETTINGS #
 ######################
@@ -148,6 +148,29 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
+# Use Memcache in heroku prod, else local django in-memory cache
+# Configured based on https://devcenter.heroku.com/articles/django-memcache#start-using-memcache
+def get_cache():
+    try:
+        os.environ['MEMCACHE_SERVERS'] = os.environ['MEMCACHIER_SERVERS']
+        os.environ['MEMCACHE_USERNAME'] = os.environ['MEMCACHIER_USERNAME']
+        os.environ['MEMCACHE_PASSWORD'] = os.environ['MEMCACHIER_PASSWORD']
+        return {
+            'default': {
+                'BACKEND': 'django_pylibmc.memcached.PyLibMCCache',
+                'LOCATION': os.environ['MEMCACHIER_SERVERS'],
+                'TIMEOUT': 3600,
+                'BINARY': True,
+            }
+        }
+    except:
+        return {
+            'default': {
+                'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'
+            }
+        }
+
+CACHES = get_cache()
 
 #############
 # DATABASES #
