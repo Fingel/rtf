@@ -72,6 +72,7 @@
 
 		{% block message_container %}
 		<div class="container">
+            <br/>
 		    {% nevercache %}
 		    {% for message in messages %}
 		        <div class="alert alert-{{ message.tags }}" data-alert="alert">
