@@ -9,9 +9,6 @@ from django.utils.text import slugify
 from rtf.models import Protest
 from geopy import geocoders
 
-import logging
-log = logging.getLogger(__name__)
-
 def protests(request):
   protest_list = Protest.objects.all().order_by('city')
   context = {'protest_list' : protest_list}
@@ -23,7 +20,6 @@ def protests_by_state(request, state=None):
 
 def protest_by_city(request, state=None, city=None, protest=None):
   if protest is None:
-    log.debug("NOOOOOOOOOOOOO!!!")
     protest = get_object_or_404(Protest, state_slug=state.lower(), city_slug=city.lower())
   return render(request, 'protests/protest.html', {'protest': protest})
 
