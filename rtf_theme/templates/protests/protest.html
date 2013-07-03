@@ -2,52 +2,101 @@
 {% block meta_title %}{{protest.city}}{% endblock %}
 {% block main %}
 <div class="container">
-    <div class="row">
+  <div class="row">
     {% if protest %}
-        <div class="span8">
-            	<h1>{{ protest.city }}, {{ protest.state }} </h1>
-            	<div class="protest-info">
-			<div class="pull-left" id="protest_data">
-			{% if protest.location %}
-				<span class="protest_info"><i class="icon-map-marker icon-2x"></i> {{protest.location}}</span>
-			{% endif %}
-			{% if protest.date %}
-				<span class="protest_info"><i class="icon-calendar icon-2x"></i> {{protest.date}}</span>
-			{% endif %}
-			{% if protest.time %}
-				<span class="protest_info"><i class="icon-time icon-2x"></i> {{protest.time}}</span>
-			{% endif %}
-			{% if protest.organizer %}
-				<span class="protest_info"><i class="icon-male icon-2x"></i> {{protest.organizer}}</span>
-			{% endif %}
-			</div>
-			<div class="pull-right" id="protest_social">
-			<i class="icon-external-link-sign icon-2x" id="social_link_icon"></i>
-				{% if protest.reddit_page %}
-					<a href="{{protest.reddit_page}}"><img src="{{STATIC_URL}}img/social/reddit.png" /></a>
-				{% endif %}
-				{% if protest.fb_page %}
-					<a href="{{protest.fb_page}}"><img src="{{STATIC_URL}}img/social/facebook.png" /></a>
-				{% endif %}
-				{% if protest.twitter %}
-					<a href="{{protest.twitter}}"><img src="{{STATIC_URL}}img/social/twitter.png" /></a>
-				{% endif %}
-			</div>
-		</div>
 
-            <div id="protest_other" class="span8">
-            	{% if protest.other %}
-            		{{protest.other|safe}}
-            	{% endif %}
+      <div class="span8">
+        <h1>{{ protest.city }}, {{ protest.state }} </h1>
+        <div class="protest-info">
+          <div class="pull-left" id="protest_data">
+            {% if protest.location %}
+              <span class="protest_info"><i class="icon-map-marker icon-2x"></i> {{protest.location}}</span>
+            {% endif %}
+            {% if protest.date %}
+              <span class="protest_info"><i class="icon-calendar icon-2x"></i> {{protest.date}}</span>
+            {% endif %}
+            {% if protest.time %}
+              <span class="protest_info"><i class="icon-time icon-2x"></i> {{protest.time}}</span>
+            {% endif %}
+            {% if protest.organizer %}
+              <span class="protest_info"><i class="icon-male icon-2x"></i> {{protest.organizer}}</span>
+            {% endif %}
             </div>
-
-            <div id="protest_footer">
-            	<p><a href="/protests"><i class="icon-circle-arrow-left icon-large"></i><span class="back_link">All Protests</span></a></p>
-            </div>
+            <div class="pull-right" id="protest_social">
+              <i class="icon-external-link-sign icon-2x" id="social_link_icon"></i>
+              {% if protest.reddit_page %}
+                <a href="{{protest.reddit_page}}"><img src="{{STATIC_URL}}img/social/reddit.png" /></a>
+              {% endif %}
+              {% if protest.fb_page %}
+                <a href="{{protest.fb_page}}"><img src="{{STATIC_URL}}img/social/facebook.png" /></a>
+              {% endif %}
+              {% if protest.twitter %}
+                <a href="{{protest.twitter}}"><img src="{{STATIC_URL}}img/social/twitter.png" /></a>
+              {% endif %}
+          </div>
         </div>
-        {% else %}
-        	<p>No protest! :(</p>
-        {% endif %}
+
+        <div id="protest_other" class="span8">
+          {% if protest.other %}
+            {{protest.other|safe}}
+          {% endif %}
+        </div>
+      </div>
+
+    {% else %}
+      {% if not protests %}
+        <p>No protest! :(</p>
+      {% endif %}
+    {% endif %}
+
+    {% if protests %}
+      {% for protest in protests %}
+        <div class="span8">
+          <h1><a href="{{ protest.get_absolute_url }}">{{ protest.city }}, {{ protest.state }}</a></h1>
+          <div class="protest-info">
+            <div class="pull-left" id="protest_data">
+              {% if protest.location %}
+                <span class="protest_info"><i class="icon-map-marker icon-2x"></i> {{protest.location}}</span>
+              {% endif %}
+              {% if protest.date %}
+                <span class="protest_info"><i class="icon-calendar icon-2x"></i> {{protest.date}}</span>
+              {% endif %}
+              {% if protest.time %}
+                <span class="protest_info"><i class="icon-time icon-2x"></i> {{protest.time}}</span>
+              {% endif %}
+              {% if protest.organizer %}
+                <span class="protest_info"><i class="icon-male icon-2x"></i> {{protest.organizer}}</span>
+              {% endif %}
+              </div>
+              <div class="pull-right" id="protest_social">
+                <i class="icon-external-link-sign icon-2x" id="social_link_icon"></i>
+                {% if protest.reddit_page %}
+                  <a href="{{protest.reddit_page}}"><img src="{{STATIC_URL}}img/social/reddit.png" /></a>
+                {% endif %}
+                {% if protest.fb_page %}
+                  <a href="{{protest.fb_page}}"><img src="{{STATIC_URL}}img/social/facebook.png" /></a>
+                {% endif %}
+                {% if protest.twitter %}
+                  <a href="{{protest.twitter}}"><img src="{{STATIC_URL}}img/social/twitter.png" /></a>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      {% if not protest %}
+        <p>No protests for this state! :(</p>
+      {% endif %}
+    {% endif %}
+    <div class="span8">
+      <div id="protest_footer">
+        <p>
+          <a href="/protests/"><i class="icon-circle-arrow-left icon-large"></i>
+            <span class="back_link">All Protests</span>
+          </a>
+        </p>
+      </div>
     </div>
+  </div>
 </div>
 {% endblock %}
