@@ -13,14 +13,14 @@
 
 #fourth-quote h2 {
     margin-top: 38px;
-    font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:  "Times New Roman", Times, serif;
     font-weight: 400;
     font-size: 26px;
     text-shadow: 2px 2px 2px #000;
 }
 
 #fourth-quote h3 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Times New Roman", Times, serif;
     font-size: 30px;
     font-weight: 300;
     text-shadow: 2px 2px 2px #000;
@@ -65,7 +65,7 @@
     text-align: center;
 }
 
-.navbar-inverse .nav .active a,  
+.navbar-inverse .nav .active a,
 .navbar-inverse .nav .active a:hover  {
     background-color: #2B446F;
 }
@@ -240,7 +240,7 @@ html,
 }
 
 .navbar-inner {
-    height: 67px; 
+    height: 67px;
 }
 
 .navbar-inner a {
