@@ -59,7 +59,9 @@ class Protest(models.Model):
             'state': self.state,
             'city': self.city or 'N/A',
             'date': self.date.strftime("%Y-%m-%d") if self.date else 'TBA',
-            'url': self.get_absolute_url()
+            'url': self.get_absolute_url(),
+            'latitude': self.latitude,
+            'longitude': self.longitude
         }
 
 @receiver(pre_save, sender=Protest)
