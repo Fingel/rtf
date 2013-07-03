@@ -193,6 +193,7 @@ html,
         .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
           margin-left: 0px;
           margin-right: 0px;
+          margin-bottom: 0px;
         }
       }
 
