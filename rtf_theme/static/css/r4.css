@@ -26,6 +26,13 @@
     text-shadow: 2px 2px 2px #000;
 }
 
+#fourth-quote h1 {
+  font-size: 32.5px;
+  text-shadow: 2px 2px 2px #000;
+  color: #FDFDFD;
+  margin-top: 37px;
+}
+
 #home-logo {
     background-color: rgba(235, 235, 235, 0.1);
     margin: 40px 0 0 0;
@@ -103,7 +110,7 @@
 }
 
 #search input[type="text"] {
-box-sizing: border-box;
+  box-sizing: border-box;
 	display: block;
 	width: 100%;
 	margin-bottom: 10px;
@@ -153,7 +160,12 @@ html,
         height: 100%;
         /* Negative indent footer by it's height */
         margin: 0 auto -60px;
-        padding-top:70px;
+      }
+
+      @media (min-width: 979px) {
+        #wrap {
+          padding-top:70px;
+        }
       }
 
       /* Set the fixed height of the footer here */
@@ -168,10 +180,19 @@ html,
       /* Lastly, apply responsive CSS fixes as necessary */
       @media (max-width: 767px) {
         #footer {
-          margin-left: -20px;
-          margin-right: -20px;
           padding-left: 20px;
           padding-right: 20px;
+        }
+        body {
+          padding-left: 0px;
+          padding-right: 0px;
+        }
+        p, h1, h2, h3, h4, h5, h6, b, i, a {
+          padding: 5px;
+        }
+        .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+          margin-left: 0px;
+          margin-right: 0px;
         }
       }
 
@@ -216,13 +237,14 @@ html,
   display: block;
 }
 
-.navbar-inverse .navbar-inner {
+.navbar-inverse .navbar-inner, .nav-collapse, .nav-collapse.collapse {
   background-color: #1f86b3;
   border: 0px;
   background-image: none;
 }
 
-.navbar-inverse .brand, .navbar-inverse .nav > li > a {
+.navbar-inverse .brand, .navbar-inverse .nav > li > a,
+.navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a {
   color: #fff;
 }
 
@@ -233,6 +255,10 @@ html,
 
 .nav-pills .open .dropdown-toggle, .nav > li.dropdown.open.active > a:hover {
   background-color: #1f86b3;
+}
+
+.nav-collapse, .nav-collapse.collapse {
+  color: white;
 }
 
 .navbar .nav > li > a {
@@ -256,6 +282,7 @@ html,
   box-shadow: none;
 }
 
-.navbar .nav > li > a:hover {
+.navbar-inverse .nav-collapse .nav > li > a:hover, .navbar .nav > li > a:hover {
   background-color: #2B446F;
 };
+
