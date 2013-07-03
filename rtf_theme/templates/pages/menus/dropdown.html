@@ -3,7 +3,8 @@
 {% if page_branch_in_menu %}
 
 {% if branch_level == 0 %}
-<ul class="nav pull-left">
+<a href="/" class="brand"><img src="/static/img/rtf.jpg" alt="RESTORE THE FOURTH"></a>
+<ul class="nav pull-right">
     {% for page in page_branch %}
     {% if not has_home and page.is_primary and forloop.first %}
     <li class="{% if on_home %} active{% endif %}" id="dropdown-menu-home">
@@ -21,7 +22,6 @@
     </li>
     {% endif %}
     {% endfor %}
-    <li class="divider-vertical"></li>
 </ul>
 {% endif %}
 
