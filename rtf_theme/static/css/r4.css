@@ -16,12 +16,6 @@
     margin: 20px 0;
     box-shadow: none;
 }
-.brand {
-    text-indent: -9999px;
-    background: url(../img/small_logo.png) center center no-repeat;
-    width: 32px;
-    height: 27px;
-}
 .navbar-inverse .extra .pull-left {
     margin: 8px 3px 0 0 !important;
 }
@@ -126,7 +120,7 @@ html,
           padding-right: 20px;
         }
       }
-      
+
 .social-icon {
 	color: #6c6c6c;
 }
@@ -161,3 +155,44 @@ html,
 #social_link_icon {
 	vertical-align:bottom;
 }
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.navbar-inverse .navbar-inner {
+  background-color: #1f86b3;
+  border: 0px;
+  background-image: none;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a {
+  color: #fff;
+}
+
+.masthead {
+  margin-top: -5px;
+}
+
+.nav-pills .open .dropdown-toggle, .nav > li.dropdown.open.active > a:hover {
+  background-color: #111111;
+}
+
+.navbar .nav > li > a {
+  padding: 12px;
+  padding-left: 15px;
+}
+
+.navbar .brand {
+  margin: 0px;
+  padding: 0px;
+}
+.brand > img {
+  box-shadow: none;
+}
+
+.navbar .nav > li > a:hover {
+  background-color: #2B446F;
+};
