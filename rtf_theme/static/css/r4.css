@@ -197,6 +197,12 @@ html,
         }
       }
 
+      @media (max-width: 979px) {
+        .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+          margin-bottom: 0px;
+        }
+      }
+
 .social-icon {
 	color: #6c6c6c;
 }
