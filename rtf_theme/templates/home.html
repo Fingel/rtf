@@ -38,9 +38,9 @@
                 {% endeditable %}
             </div>
         </div>
-	
-    </div>  
-    
+
+    </div>
+
 </div>
 <div class="container">
 	<div class="row">
@@ -54,17 +54,17 @@
 		    			</div>
 		    			<div style="float: left; max-width: 200px;">
 		        			<strong>{location}</strong><br><br>
-		        			<a href="/protests/{info}">More Info</a>
+		        			<a href="{info}">More Info</a>
 		    			</div>
 				</div>
 	    		</div>
-		</div>   
+		</div>
 	</div>
 </div>
 <script src="//maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true&amp;libraries=places"></script>
 <script type="text/javascript">
 // hardcoded list of locations
-    var locations = 
+    var locations =
     	[
     ];
 
@@ -168,17 +168,17 @@
         // plot new markers on the map, make them interactive
         this.plotStaticMarkers = function(data){
         	$.each(data, function (i, location) {
-        		var latlng = new google.maps.LatLng(location.fields.latitude, location.fields.longitude);
+        		var latlng = new google.maps.LatLng(location.latitude, location.longitude);
         		var marker = new google.maps.Marker({
                             map:        map,
                             position:   latlng,
-                            title:      location.fields.city
+                            title:      location.city
                         });
-                        
+
                         google.maps.event.addListener(marker, 'click', function () {
                             var content = infoWindowTemplate
-                                    .replace('{location}', location.fields.city)
-                                    .replace('{info}', location.pk);
+                                    .replace('{location}', location.city)
+                                    .replace('{info}', location.url);
 
                             infoWindow.setContent(content);
                             infoWindow.open(map, marker);
@@ -220,7 +220,7 @@
 	$.getJSON('/protests.json/', function(data){
 		map.plotStaticMarkers(data);
 	});
-        
+
 
         $('#search').on('submit', function (e) {
             e.preventDefault();
