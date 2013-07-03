@@ -293,3 +293,105 @@ html,
   background-color: #2B446F;
 };
 
+/* SINA EDIT */
+
+div.protestpage #fourth-quote h1 {
+  font-size: 29px;
+  font-weight:300;
+}
+
+
+
+div.protestpage #fourth-quote h3 {
+  font-family: inherit;
+  font-size: 27px;
+  font-weight:200;
+}
+
+
+div.protestpage #home-logo {
+  background: none;
+  margin-top:80px;
+}
+
+div.eventinfo {
+  padding-top:25px;
+}
+
+div.eventinfo div.span3 {
+  text-align:right;
+  font-size: 30px;
+  font-weight: 400;
+  line-height:145%;
+  color: #15181b;
+  text-shadow: 0px 1px 0px #aaa;
+  min-height:60px;
+}
+
+div.eventinfo div.span5 {
+  font-size: 26px;
+  color: #fff;
+  text-align:left;
+  text-shadow: 0px 1px 0px #555;
+  line-height:120%;
+  padding-top:8px;
+  padding-bottom:10px;
+  font-weight:300;
+
+}
+
+div.eventinfo div.social-links img, div.eventinfo div.social img  {
+  box-shadow: none;
+}
+
+div.eventinfo div.social-links img {
+  padding: 10px 0;
+}
+
+div.eventinfo div.social-links .span3 {
+  padding-top:23px;
+}
+
+div.protestpage .moredetails {
+    margin-top:30px;
+}
+
+div.protestpage .moredetails h3 {
+  font-weight:300;
+  font-size:30px;
+  text-align:right;
+}
+
+div.protestpage .moredetails .span8 {
+  margin-top:16px;
+}
+
+@media (max-width: 767px) {
+  div.eventinfo div.span3 {
+    text-align:left;
+    min-height:0;
+    line-height:120%;
+  }
+  div.eventinfo div.row {
+    padding: 4px 30px;
+  }
+
+  #home-logo .logo {
+    max-width:400px;
+  }
+
+  div.eventinfo div.social-links .span3 {
+    padding-top:4px;
+  }
+
+  div.protestpage #home-logo {
+    margin-top:30px;
+  }
+  div.eventinfo#home-map {margin-top:0; padding-top:10px;}
+}
+
+
+
+/* END SINA EDIT */
+
+
