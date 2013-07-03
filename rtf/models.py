@@ -50,7 +50,17 @@ class Protest(models.Model):
         return u"{0}, {1}".format(self.state, self.city)
 
     def get_absolute_url(self):
-        return u"/protests/%s/%s/" % (slugify(self.state), slugify(self.city))
+        if self.city is None:
+            return "/protests/%s/" % slugify(self.state)
+        return "/protests/%s/%s/" % (slugify(self.state), slugify(self.city))
+
+    def to_json(self):
+        return {
+            'state': self.state,
+            'city': self.city or 'N/A',
+            'date': self.date.strftime("%Y-%m-%d") if self.date else 'TBA',
+            'url': self.get_absolute_url()
+        }
 
 @receiver(pre_save, sender=Protest)
 def pop_latlong(sender, instance, *args, **kwargs):
