@@ -34,6 +34,18 @@ class Protest(models.Model):
     other = models.TextField(max_length=2000,null=True,blank=True)
     latitude = models.FloatField(editable=False,default=0.0)
     longitude = models.FloatField(editable=False,default=0.0)
+    state_slug = models.CharField(max_length=255, default=None, blank=True, editable=False)
+    city_slug = models.CharField(max_length=255, default=None, blank=True, editable=False)
+
+    def save(self, *args, **kwargs):
+        if self.state is not None:
+            self.state_slug = slugify(self.state)
+        if self.city is not None:
+            self.city_slug = slugify(self.city)
+        super(Protest, self).save(*args, **kwargs)
+
+    def __unicode__(self):
+        return u"{0}, {1}".format(self.state, self.city)
 
     def generateLatLong(self):
         if self.latitude == 0.0 or self.longitude == 0.0:
@@ -45,9 +57,6 @@ class Protest(models.Model):
             self.latitude = lat
             self.longitude = lng
             sleep(.5)
-
-    def __unicode__(self):
-        return u"{0}, {1}".format(self.state, self.city)
 
     def get_absolute_url(self):
         if self.city is None:
