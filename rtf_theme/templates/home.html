@@ -35,12 +35,13 @@
         <img class="logo" src="{{STATIC_URL}}img/large_logo.png" alt="restore the
             fourth logo">
         <p>Help spread the word:</p>
-        <a class="social" href="mailto:?subject=Restore the Fourth Ammendment!&body=Please check out these protests to restore the fourth ammendment! http://restorethefourth.net"><img src="{{STATIC_URL}}img/social/email.png" /></a>
-        <a class="social"
-        href="https://twitter.com/Restore_the4th"><img src="{{STATIC_URL}}img/social/twitter.png"
-        /></a>
+        <a class="social" href="mailto:?subject=As you probably realize, the government's been conducting massive surveillance of Americans and foreign nationals as part of the NSA's Dragnet surveillance program. I'm taking part in a protest to Restore the Fourth amendmant, will you join me? Find out more here: http://restorethefourth.net" target="_blank"><img src="{{STATIC_URL}}img/social/email.png" /></a>
+        <a class="social" id="tweet-box" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Frestorethefourth.net&text=This%20July%204th%20protests%20are%20planned%20across%20the%20country%20against%20surveillance%20%26%20to%20%40restorethefourth.%20Will%20you%20be%20there%3F&related=stopwatchingus%2Csinak" target="_blank"><img src="{{STATIC_URL}}img/social/twitter.png"/></a>
         <br />
-        <a class="social" href="https://www.facebook.com/RestoreTheFourth"><img src="{{STATIC_URL}}img/social/facebook.png" /></a>
+        <a class="social" id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=hhttp%3A%2F%2Frestorethefourth.net" target="_blank"><img src="{{STATIC_URL}}img/social/facebook.png" /></a>
+        <script type="text/javascript">
+            function openFacebook(){var e="https://www.facebook.com/sharer/sharer.php?u=hhttp%3A%2F%2Frestorethefourth.net";window.open(e,"Share on Facebook","width=626,height=436");return false}function openTwitter(){var e="https://twitter.com/intent/tweet?url=http%3A%2F%2Frestorethefourth.net&text=This%20July%204th%20protests%20are%20planned%20across%20the%20country%20against%20surveillance%20%26%20to%20%40restorethefourth.%20Will%20you%20be%20there%3F&related=stopwatchingus%2Csinak";window.open(e,"Twitter","width=550,height=420");return false}$(document).ready(function(){$("#facebook").attr("onclick","openFacebook(); return false;");$("#tweet-box").attr("onclick","openTwitter(); return false;")})
+        </script>
       </div>
       <div class="span7 offset1" id="home-map">
 	<center><h2>JOIN A PROTEST IN YOUR AREA THIS JULY:</h2></center>
