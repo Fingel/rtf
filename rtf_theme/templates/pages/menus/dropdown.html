@@ -3,7 +3,7 @@
 {% if page_branch_in_menu %}
 
 {% if branch_level == 0 %}
-<a href="/" class="brand"><img src="/static/img/rtf.jpg" alt="RESTORE THE FOURTH"></a>
+<a href="/" class="brand"><img src="{{STATIC_URL}}img/rtf.jpg" alt="RESTORE THE FOURTH"></a>
 <ul class="nav pull-right">
     {% for page in page_branch %}
     {% if not has_home and page.is_primary and forloop.first %}
