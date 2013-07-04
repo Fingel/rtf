@@ -59,16 +59,52 @@
 </div>
 <div class="container moredetails">
   <div class="row">
-             <!-- SINA EDIT -->
-          <div class="span12">
-            <div class="row">
-                <div class="span3">
-                    <h3>Other details:</h3>
-                </div>
-                <div class="span8">
-                    <p> {{protest.other|safe}}</p>
-                </div>
+    <div class="span12">
+      <div class="row">
+          <div class="span3">
+              <h3>Other details:</h3>
           </div>
+          <div class="span8">
+              <p> {{protest.other|safe}}</p>
+          </div>
+      </div>
+    </div>
+
+
+    <div class="span12">
+      <div class="row">
+          <div class="span3">
+              <h3>Prepare:</h3>
+          </div>
+          <div class="span8">
+              <p>Before you protest, make sure to:</p>
+              <ul>
+                <li>Promote it! To friends, local groups, on the internet, etc. Tell everyone to come join!</li>
+                <li>Bring good visuals- signs, t-shirts, props, etc. Check out the <a href="http://www.restorethefourth.net/resources/">Resources page</a> for posters and flyers.</li>
+                <li>Figure out logistics - sunblock, water, food, etc.</li>
+                <li>Once you're at the event, make sure to take lots of pictures!</li>
+                <li>Please remember: these are non=partisan, non-violent protests. No violence will be tolerated on the day of the event.</li>
+              </ul>
+              <p>And if you're will contact your organizers and see if they need volunteers to help.</p>
+          </div>
+        </div>
+    </div>
+
+    {% if protest.organizer %}
+    <div class="span12">
+      <div class="row">
+          <div class="span3">
+              <h3>Organizer:</h3>
+          </div>
+          <div class="span8">
+              <p>You can contact your organizer either on reddit or by e-mail: {{protest.organizer}}</p>
+          </div>
+        </div>
+    </div>
+     {% endif %}
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
 
 </div></div>
 </div>
