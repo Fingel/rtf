@@ -401,3 +401,14 @@ div#mc_embed_signup h4 {
 	text-shadow: 0px 1px 0px rgb(85, 85, 85);
 }
 
+.home-text {
+font-size: 35px;
+color: rgb(255, 255, 255);
+text-align: left;
+text-shadow: 0px 1px 0px rgb(85, 85, 85);
+line-height: 120%;
+padding-top: 8px;
+padding-bottom: 10px;
+font-weight: 300;
+}
+
