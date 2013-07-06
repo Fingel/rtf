@@ -2,7 +2,10 @@
     background-image: url(../img/masthead.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    position: absolute;
     padding: 0 0 50px 0;
+    width: 100%;
+    height: 100%;
 }
 
 #fourth-quote {
@@ -158,6 +161,8 @@ html,
         min-height: 90%;
         height: auto !important;
         height: 100%;
+        position: relative;
+
         /* Negative indent footer by it's height */
         margin: 0 auto -60px;
       }
