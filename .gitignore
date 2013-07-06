@@ -67,3 +67,5 @@ nosetests.xml
 venv
 local_settings.py
 rtf/static/
+.env
+*.dump

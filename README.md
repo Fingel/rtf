@@ -45,12 +45,18 @@ From the "fourth" directory, create a database:
     
     ./manage.py createdb
 
+Now migrate the database:
+
+    ./manage.py migrate rtf
+
 Now run the server:
     
     ./manage.py runserver
 
 The dev site is now your browser:
 [http://localhost:8000](http://localhost:8000)
+
+You'll get a page that looks nothing like the one on restorethefourth.net. You'll need to visit [the admin panel](http://127.0.0.1:8000/admin) and add a new page. Set the slug to "/" and it should take the place of the homepage.
 
 # FAQ, Communications, Goals and Plans
 

@@ -1,55 +1,113 @@
-{% extends "base.html" %}
-{% load mezzanine_tags keyword_tags %}
-
+{% extends "home.html" %}
 {% block meta_title %}{{protest.city}}{% endblock %}
-
-{% block breadcrumbs %}{% endblock %}
-
-{% block meta_keywords %}{% metablock %}
-{% keywords_for page as keywords %}
-{% for keyword in keywords %}
-    {% if not forloop.first %}, {% endif %}
-    {{ keyword }}
-{% endfor %}
-{% endmetablock %}{% endblock %}
-
-{% block meta_description %}{% metablock %}
-{{ page.description }}
-{% endmetablock %}{% endblock %}
-
-{% block title %}
-{% editable page.title %}{{ page.title }}{% endeditable %}
-{% endblock %}
-
 {% block stage %}
-<div class="container">
+<div class="protestpage">
+<div class="masthead">
+  <div id="fourth-quote">
+    <div class="container">
+      <div class="row">
+        <div class="span12 featured">
+          <h1>JOIN THE RESTORE THE FOURTH PROTEST IN <span class="uppercase">{{protest.city.upper}}, {{protest.state.upper}}:</span></h1>
+          <h3> The U.S. government is spying on its own citizens and on people around the world. <br />Join thousands across the country in protesting against unconstitutional surveillance.</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
     <div class="row">
-        <div class="span12">
-            {% if protest %}
-            	<h1>{{ protest.state }} > {{ protest.city }} </h1>
-		<ul>
-			<li><b>Location:</b> {{protest.location}}</li>
-			<li><b>Date:</b> {{protest.date}}</li>
-			<li><b>Time:</b> {{protest.time}}</li>
+      <div class="span4 featured" id="home-logo">
+              <img class="logo" src="{{STATIC_URL}}img/large_logo.png" alt="restore the fourth logo">
+              
+            </div>
 
-			{% if protest.reddit_page %}
-				<li><a href="{{protest.reddit_page}}">Reddit</a></li>
+            <div class="span8  eventinfo" id="home-map">
+              <center>
+
+                <div class="row"><div class="span3">Date:</div><div class="span5">{{protest.date}}</div></div>
+                <div class="row"><div class="span3">Time:</div><div class="span5">{{protest.time}}</div></div>
+                <div class="row"><div class="span3">Location:</div><div class="span5">{{protest.location}}</div></div>
+                <div class="row social-links">
+                    <div class="span3" class="links">Links:</div>
+                    <div class="span5 ">
+                    	{% if protest.fb_page %}
+                        <a href="{{protest.fb_page}}" target="_blank"><img src="{{STATIC_URL}}img/social/circle_fb.png" /></a>
+                        {% endif %}
+                        {% if protest.twitter %}
+                        <a href="{{protest.twitter}}" target="_blank"><img src="{{STATIC_URL}}img/social/circle_tw.png" /></a>
 			{% endif %}
-			{% if protest.fb_page %}
-				<li><a href="{{protest.fb_page}}">Facebook</a></li>
-			{% endif %}
-			{% if protest.twitter %}
-				<li><a href="{{protest.twitter}}">Twitter</a></li>
-			{% endif %}
-			{% if protest.other %}
-				<li><b>Other:</b> {{protest.other}}</li>
-			{% endif %}
-		</ul>
-            {% else %}
-            	<p>No protest! :(</p>
-            {% endif %}
-            <p><a href="/protests">&lt;&lt; Protests</a></p>
+                        {% if protest.reddit_page %}
+                        <a href="{{protest.reddit_page}}" target="_blank"><img src="{{STATIC_URL}}img/social/circle_reddit.png" /></a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row social"><div class="span3">Spread the word:</div><div class="span5">
+                    
+                    <a class="social" href="mailto:?subject=The%20U.S.%20government%20is%20spying%20on%20you.%20Let's%20do%20something%20about%20it.&amp;body=Nationwide%20Protests%20to%20Restore%20the%20Fourth%0A%0AOn%20June%206th,%20The%20Guardian%20and%20The%20Washington%20Post%20published%20NSA-contractor%20Edward%20Snowden's%20leaks%20revealing%20the%20existence%20of%20PRISM,%20a%20clandestine%20electronic%20surveillance%20program%20that%20allows%20the%20NSA%20to%20directly%20access%20e-mail,%20web%20searches,%20and%20other%20Internet%20traffic.%20This%20program%20is%20in%20blatant%20violation%20of%20the%20Fourth%20Amendment%20of%20the%20U.S.%20Constitution,%20protecting%20us%20against%20'unreasonable%20searches%20and%20seizures'%20and%20those%20without%20a%20warrant%20or%20probable%20cause.%0A%0AConcerned?%20You%20can%20do%20something.%20In%20July,%20thousands%20of%20people%20in%20over%2050%20cities%20across%20the%20United%20States%20will%20protest%20the%20unconstitutional%20surveillance%20methods%20employed%20by%20the%20U.S.%20government,%20educating%20other%20citizens%20on%20the%20issue%20and%20preparing%20an%20apparatus%20for%20further%20action.%0A%0AYou%20can%20learn%20more%20and%20find%20and%20sign%20up%20for%20your%20local%20protest%20at%20http://www.restorethefourth.net." target="_blank"><img src="{{STATIC_URL}}img/social/email.png"></a> <a class="social" id="tweet-box" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Frestorethefourth.net&amp;text=This%20July%204th%20protests%20are%20planned%20across%20the%20country%20against%20surveillance%20%26%20to%20%40restorethefourth.%20Will%20you%20be%20there%3F&amp;related=stopwatchingus%2Csinak" target="_blank" onclick="openTwitter(); return false;"><img src="{{STATIC_URL}}img/social/twitter.png"></a>
+                    
+                    <a class="social" id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=hhttp%3A%2F%2Frestorethefourth.net" target="_blank" onclick="openFacebook(); return false;"><img src="{{STATIC_URL}}img/social/facebook.png"></a> 
+
+                    <script type="text/javascript">
+                    function openFacebook(){var e="https://www.facebook.com/sharer/sharer.php?u=hhttp%3A%2F%2Frestorethefourth.net";window.open(e,"Share on Facebook","width=626,height=436");return false}function openTwitter(){var e="https://twitter.com/intent/tweet?url=http%3A%2F%2Frestorethefourth.net&text=This%20July%204th%20protests%20are%20planned%20across%20the%20country%20against%20surveillance%20%26%20to%20%40restorethefourth.%20Will%20you%20be%20there%3F&related=stopwatchingus%2Csinak";window.open(e,"Twitter","width=550,height=420");return false}$(document).ready(function(){$("#facebook").attr("onclick","openFacebook(); return false;");$("#tweet-box").attr("onclick","openTwitter(); return false;")})
+                    </script>
+                </div></div>
+              </center>
+
+            </div>
+      </div>
+    </div>
+
+</div>
+<div class="container moredetails">
+
+    {% if protest.other %}
+    <div class="span12">
+      <div class="row">
+          <div class="span3">
+              <h3>Other details:</h3>
+          </div>
+          <div class="span8">
+              <p> {{protest.other|safe}}</p>
+          </div>
+      </div>
+    </div>
+    {% endif %}
+
+
+    <div class="span12">
+      <div class="row">
+          <div class="span3">
+              <h3>Prepare:</h3>
+          </div>
+          <div class="span8">
+              <p>Before you protest, make sure to:</p>
+              <ul>
+                <li>Promote it! To friends, local groups, on the internet, etc. Tell everyone to come join!</li>
+                <li>Bring good visuals- signs, t-shirts, props, etc. Check out the <a href="http://www.restorethefourth.net/resources/">Resources page</a> for posters and flyers.</li>
+                <li>Figure out logistics - sunblock, water, food, etc.</li>
+                <li>Once you're at the event, make sure to take lots of pictures!</li>
+                <li>Please remember: these are non-partisan, non-violent protests. No violence will be tolerated on the day of the event.</li>
+              </ul>
+              <p>And if you're willing contact your organizers and see if they need volunteers to help.</p>
+          </div>
         </div>
     </div>
+
+    {% if protest.organizer %}
+    <div class="span12">
+      <div class="row">
+          <div class="span3">
+              <h3>Organizer:</h3>
+          </div>
+          <div class="span8">
+              <p>You can contact your organizer either on reddit or by e-mail: {{protest.organizer}}</p>
+          </div>
+        </div>
+    </div>
+     {% endif %}
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+
+</div></div>
 </div>
 {% endblock %}

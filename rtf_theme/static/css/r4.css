@@ -1,29 +1,85 @@
 .masthead {
-    background-image: url(../img/solid_bg.png), url(../img/pattern.png);
-    background-position: left top, left top;
-    background-repeat: repeat, repeat;
-    border-bottom: 1px solid #78b5da;
+    background-image: url(../img/masthead.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 0 50px 0;
 }
+
+#fourth-quote {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    min-height: 200px;
+}
+
+#fourth-quote h2 {
+    margin-top: 38px;
+    font-family:  "Times New Roman", Times, serif;
+    font-weight: 400;
+    font-size: 26px;
+    text-shadow: 2px 2px 2px #000;
+}
+
+#fourth-quote h3 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    font-weight: 300;
+    text-shadow: 2px 2px 2px #000;
+}
+
+#fourth-quote h1 {
+  font-size: 32.5px;
+  text-shadow: 2px 2px 2px #000;
+  color: #FDFDFD;
+  margin-top: 37px;
+}
+
+#home-logo {
+    background-color: rgba(235, 235, 235, 0.1);
+    margin: 40px 0 0 0;
+    padding: 20px 0 30px 0;
+}
+
+#home-logo p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+#home-logo .social img {
+    padding: 0px 5px 10px 5px;
+    max-height: 25px;
+    width: auto;
+    box-shadow: none;
+}
+
+#home-logo .logo {
+    margin-top: 20px;
+    box-shadow: none;
+    width: 75%;
+}
+
+#home-map {
+    margin-top: 20px;
+}
+
+#home-map h2 {
+    font-weight: 500;
+    color: #15181b;
+}
+
 .featured {
     text-align: center;
 }
+
+.navbar-inverse .nav .active a,
+.navbar-inverse .nav .active a:hover  {
+    background-color: #2B446F;
+}
+
 .navbar-inverse .extra img,
-.featured img {
-    box-shadow: none;
-    margin-top: 6px;
-}
-.featured img {
-    margin: 20px 0;
-    box-shadow: none;
-}
-.brand {
-    text-indent: -9999px;
-    background: url(../img/small_logo.png) center center no-repeat;
-    width: 32px;
-    height: 27px;
-}
 .navbar-inverse .extra .pull-left {
-    margin: 8px 10px 0 0 !important;
+    margin: 8px 3px 0 0 !important;
 }
 .navbar-inverse .extra .pull-left .flag1 {
     color: #ed2200;
@@ -35,14 +91,13 @@
     color: #0083b8;
 }
 .navbar-inverse .extra {
-    background-color: #000;
     padding: 5px 25px;
 }
+
 #map img {
 	max-width: none;
 	box-shadow: none;
 }
-
 
 .icon-warning-sign {
 	color: #f00;
@@ -55,7 +110,7 @@
 }
 
 #search input[type="text"] {
-box-sizing: border-box;
+  box-sizing: border-box;
 	display: block;
 	width: 100%;
 	margin-bottom: 10px;
@@ -75,7 +130,7 @@ box-sizing: border-box;
 }
 
 #map {
-	height: 600px;
+	height: 475px;
 }
 
 #infoWindowTemplate {
@@ -91,3 +146,255 @@ box-sizing: border-box;
 	padding-right: 20px;
 	vertical-align: text-top;
 }
+
+html,
+      body {
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+      }
+
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 90%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
+
+      @media (min-width: 979px) {
+        #wrap {
+          padding-top:70px;
+        }
+      }
+
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+      }
+      #footer {
+        text-align: center;
+      }
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        body {
+          padding-left: 0px;
+          padding-right: 0px;
+        }
+        p, h1, h2, h3, h4, h5, h6, b, i, a {
+          padding: 5px;
+        }
+        .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+          margin-left: 0px;
+          margin-right: 0px;
+          margin-bottom: 0px;
+        }
+      }
+
+      @media (max-width: 979px) {
+        .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+          margin-bottom: 0px;
+        }
+      }
+
+.social-icon {
+	color: #6c6c6c;
+}
+
+.navbar > a:hover {
+	text-decoration: none;
+}
+
+#protest_footer {
+	clear: both;
+}
+
+#protest_other {
+	clear: both;
+	padding: 7px;
+}
+
+.protest_info {
+	padding: 4px;
+	white-space: nowrap;
+}
+
+.back_link {
+	font-size: 1.2em;
+	margin-left: 5px;
+}
+
+#protest_data {
+	max-width: 600px;
+}
+
+#social_link_icon {
+	vertical-align:bottom;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.navbar-inverse .navbar-inner, .nav-collapse, .nav-collapse.collapse {
+  background-color: #1f86b3;
+  border: 0px;
+  background-image: none;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a,
+.navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a {
+  color: #fff;
+}
+
+.masthead {
+  margin-top: -5px;
+}
+
+
+.nav-pills .open .dropdown-toggle, .nav > li.dropdown.open.active > a:hover {
+  background-color: #1f86b3;
+}
+
+.nav-collapse, .nav-collapse.collapse {
+  color: white;
+}
+
+.navbar .nav > li > a {
+  padding: 22px 12px 12px 15px;
+}
+
+.navbar-inner {
+    height: 67px;
+}
+
+.navbar-inner a {
+    min-height: 33px;
+}
+
+.navbar .brand {
+    margin: 15px 0 10px 0;
+    padding: 0px;
+}
+
+.brand > img {
+  box-shadow: none;
+}
+
+.navbar-inverse .nav-collapse .nav > li > a:hover, .navbar .nav > li > a:hover {
+  background-color: #2B446F;
+};
+
+/* SINA EDIT */
+
+div.protestpage #fourth-quote h1 {
+  font-size: 29px;
+  font-weight:300;
+}
+
+
+
+div.protestpage #fourth-quote h3 {
+  font-family: inherit;
+  font-size: 27px;
+  font-weight:200;
+}
+
+
+div.protestpage #home-logo {
+  background: none;
+  margin-top:80px;
+}
+
+div.eventinfo {
+  padding-top:25px;
+}
+
+div.eventinfo div.span3 {
+  text-align:right;
+  font-size: 30px;
+  font-weight: 400;
+  line-height:145%;
+  color: #15181b;
+  text-shadow: 0px 1px 0px #aaa;
+  min-height:60px;
+}
+
+div.eventinfo div.span5 {
+  font-size: 26px;
+  color: #fff;
+  text-align:left;
+  text-shadow: 0px 1px 0px #555;
+  line-height:120%;
+  padding-top:8px;
+  padding-bottom:10px;
+  font-weight:300;
+
+}
+
+div.eventinfo div.social-links img, div.eventinfo div.social img  {
+  box-shadow: none;
+}
+
+div.eventinfo div.social-links img {
+  padding: 10px 0;
+}
+
+div.eventinfo div.social-links .span3 {
+  padding-top:23px;
+}
+
+div.protestpage .moredetails {
+    margin-top:30px;
+}
+
+div.protestpage .moredetails h3 {
+  font-weight:300;
+  font-size:30px;
+  text-align:right;
+}
+
+div.protestpage .moredetails .span8 {
+  margin-top:16px;
+}
+
+@media (max-width: 767px) {
+  div.eventinfo div.span3 {
+    text-align:left;
+    min-height:0;
+    line-height:120%;
+  }
+  div.eventinfo div.row {
+    padding: 4px 30px;
+  }
+
+  #home-logo .logo {
+    max-width:400px;
+  }
+
+  div.eventinfo div.social-links .span3 {
+    padding-top:4px;
+  }
+
+  div.protestpage #home-logo {
+    margin-top:30px;
+  }
+  div.eventinfo#home-map {margin-top:0; padding-top:10px;}
+}
+
+
+
+/* END SINA EDIT */
+div#mc_embed_signup h4 {
+	color: #ffffff;
+	text-shadow: 0px 1px 0px rgb(85, 85, 85);
+}
+

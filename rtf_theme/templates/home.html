@@ -17,54 +17,69 @@
 {% block message_container %}{% endblock %}
 {% block stage %}
 <div class="masthead">
+  <div id="fourth-quote">
     <div class="container">
-        <div class="row">
-            <div class="span12 featured">
-                {% editable flexi_featured_homepage_area.content %}
-                    <img src="{{STATIC_URL}}img/large_logo.png" alt="restore the fourth logo">
-                    {{ flexi_featured_homepage_area.content|richtext_filter|safe }}
-                {% endeditable %}
-            </div>
+      <div class="row">
+        <div class="span12 featured">
+          <h1>WE’RE PROTESTING TO RESTORE THE FOURTH AMENDMENT:</h1>
+          <h3>“The right of the people to be secure in their persons,
+            houses, papers, and effects, against unreasonable searches and
+            seizures, shall not be violated...”</h3>
         </div>
-        <div class="row">
-            <div class="span6">
-                {% editable flexi_left_content_area.content %}
-                    {{ flexi_left_content.content|richtext_filter|safe }}
-                {% endeditable %}
-            </div>
-            <div class="span6">
-                {% editable flexi_right_content_area.content %}
-                    {{ flexi_right_content.content|richtext_filter|safe }}
-                {% endeditable %}
-            </div>
-        </div>
-	
-    </div>  
-    
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="span4 featured" id="home-logo">
+        <img class="logo" src="{{STATIC_URL}}img/large_logo.png" alt="restore the
+            fourth logo">
+        <p>Help spread the word:</p>
+        <a class="social" href="mailto:?subject=The U.S. government is spying on you. Let's do something about it.&amp;body=Nationwide Protests to Restore the Fourth%0A%0AOn June 6th, The Guardian and The Washington Post published NSA-contractor Edward Snowden's leaks revealing the existence of PRISM, a clandestine electronic surveillance program that allows the NSA to directly access e-mail, web searches, and other Internet traffic. This program is in blatant violation of the Fourth Amendment of the U.S. Constitution, protecting us against 'unreasonable searches and seizures' and those without a warrant or probable cause.%0A%0AConcerned? You can do something. In July, thousands of people in over 50 cities across the United States will protest the unconstitutional surveillance methods employed by the U.S. government, educating other citizens on the issue and preparing an apparatus for further action.%0A%0AYou can learn more and find and sign up for your local protest at http://www.restorethefourth.net." target="_blank"><img src="{{STATIC_URL}}img/social/email.png" /></a>
+        <a class="social" id="tweet-box" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Frestorethefourth.net&text=This%20July%204th%20protests%20are%20planned%20across%20the%20country%20against%20surveillance%20%26%20to%20%40restorethefourth.%20Will%20you%20be%20there%3F&related=Restore_the4th%2Csinak" target="_blank"><img src="{{STATIC_URL}}img/social/twitter.png"/></a>
+        <br />
+        <a class="social" id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=hhttp%3A%2F%2Frestorethefourth.net" target="_blank"><img src="{{STATIC_URL}}img/social/facebook.png" /></a>
+        <script type="text/javascript">
+            function openFacebook(){var e="https://www.facebook.com/sharer/sharer.php?u=hhttp%3A%2F%2Frestorethefourth.net";window.open(e,"Share on Facebook","width=626,height=436");return false}function openTwitter(){var e="https://twitter.com/intent/tweet?url=http%3A%2F%2Frestorethefourth.net&text=This%20July%204th%20protests%20are%20planned%20across%20the%20country%20against%20surveillance%20%26%20to%20%40restorethefourth.%20Will%20you%20be%20there%3F&related=Restore_the4th%2Csinak";window.open(e,"Twitter","width=550,height=420");return false}$(document).ready(function(){$("#facebook").attr("onclick","openFacebook(); return false;");$("#tweet-box").attr("onclick","openTwitter(); return false;")})
+        </script>
+    <div id="mc_embed_signup">
+    <p>Sign up for our newsletter</p>
+    <form action="http://restorethefourth.us7.list-manage2.com/subscribe/post?u=78ef7834b585d79e03ecda09a&amp;id=4ecea1236d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required> <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">
+    </form>
+    </div>
+      </div>
+      <div class="span7 offset1" id="home-map">
+	<center><h2>JOIN A PROTEST IN YOUR AREA JULY 4TH:</h2></center>
+	<div id="map"></div>
+	<div id="infoWindowTemplate">
+	  <div class="infoWindow">
+	    <div style="float: left;">
+	      <img class="logo" src="{{STATIC_URL}}img/small_logo.png" alt="Restore the Fourth">
+	    </div>
+	    <div style="float: left; max-width: 200px;">
+	      <strong>{location}</strong><br><br>
+	      <a href="{info}">More Info</a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+    </div>
+      
+  </div>
+
 </div>
 <div class="container">
-	<div class="row">
-		<div class="span12">
-	    		<center><h1>Find a Protest in Your Area</h1></center>
-	    		<div id="map"></div>
-	    		<div id="infoWindowTemplate">
-				<div class="infoWindow">
-		    			<div style="float: left;">
-		        			<img class="logo" src="{{STATIC_URL}}img/small_logo.png" alt="Restore the Fourth">
-		    			</div>
-		    			<div style="float: left; max-width: 200px;">
-		        			<strong>{location}</strong><br><br>
-		        			<a href="/protests/{info}">More Info</a>
-		    			</div>
-				</div>
-	    		</div>
-		</div>   
-	</div>
+  <div class="row">
+    <div class="span12">
+    </div>
+  </div>
 </div>
 <script src="//maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true&amp;libraries=places"></script>
 <script type="text/javascript">
 // hardcoded list of locations
-    var locations = 
+    var locations =
     	[
     ];
 
@@ -168,17 +183,17 @@
         // plot new markers on the map, make them interactive
         this.plotStaticMarkers = function(data){
         	$.each(data, function (i, location) {
-        		var latlng = new google.maps.LatLng(location.fields.latitude, location.fields.longitude);
+        		var latlng = new google.maps.LatLng(location.latitude, location.longitude);
         		var marker = new google.maps.Marker({
                             map:        map,
                             position:   latlng,
-                            title:      location.fields.city
+                            title:      location.city
                         });
-                        
+
                         google.maps.event.addListener(marker, 'click', function () {
                             var content = infoWindowTemplate
-                                    .replace('{location}', location.fields.city)
-                                    .replace('{info}', location.pk);
+                                    .replace('{location}', location.city)
+                                    .replace('{info}', location.url);
 
                             infoWindow.setContent(content);
                             infoWindow.open(map, marker);
@@ -216,20 +231,20 @@
 
     // initialize
     $(function () {
-        var map = new EventsMap();
-	$.getJSON('/protests.json', function(data){
-		map.plotStaticMarkers(data);
-	});
-        
+    var map = new EventsMap();
+$.getJSON('/protests.json/', function(data){
+map.plotStaticMarkers(data);
+});
+
 
         $('#search').on('submit', function (e) {
             e.preventDefault();
         });
 
-        $('#search a').on('click', function (e) {
-            e.preventDefault();
-            map.centerOnGeolocation();
-        });
+    $('#search a').on('click', function (e) {
+    e.preventDefault();
+    map.centerOnGeolocation();
+    });
     });
 </script>
 {% endblock %}
