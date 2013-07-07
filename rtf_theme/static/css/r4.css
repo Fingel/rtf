@@ -60,13 +60,19 @@
     width: 75%;
 }
 
-#home-map {
-    margin-top: 20px;
+#home-right {
+    margin-top: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    min-height: 485px;
+	
 }
 
-#home-map h2 {
+#home-right h2 {
     font-weight: 500;
-    color: #15181b;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
 }
 
 .featured {
@@ -390,7 +396,7 @@ div.protestpage .moredetails .span8 {
   div.protestpage #home-logo {
     margin-top:30px;
   }
-  div.eventinfo#home-map {margin-top:0; padding-top:10px;}
+  div.eventinfo#home-right {margin-top:0; padding-top:10px;}
 }
 
 
@@ -399,16 +405,5 @@ div.protestpage .moredetails .span8 {
 div#mc_embed_signup h4 {
 	color: #ffffff;
 	text-shadow: 0px 1px 0px rgb(85, 85, 85);
-}
-
-.home-text {
-font-size: 35px;
-color: rgb(255, 255, 255);
-text-align: left;
-text-shadow: 0px 1px 0px rgb(85, 85, 85);
-line-height: 120%;
-padding-top: 8px;
-padding-bottom: 10px;
-font-weight: 300;
 }
 

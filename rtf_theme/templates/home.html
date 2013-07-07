@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load mezzanine_tags keyword_tags %}
+{% load mezzanine_tags keyword_tags blog_tags keyword_tags disqus_tags %}
 
 {% block meta_title %}{{ page.meta_title }}{% endblock %}
 
@@ -49,9 +49,15 @@
     </form>
     </div>
       </div>
-      <div class="span7 offset1" id="home-map">
-	<p class="home-text">
-	On July 4th 2013, tens of thousands of you from over 50 cities across the United States came out to protest unconstitutional surveillance. What began as online discussions between anonymous strangers became in less than a month a coordinated nationwide movement that turned the heads of the American people and their government alike. Now we must capitalize on that by moving on to Step 2, which is to let them know the next thing they need to be made aware of: This isn't over.</p>
+      <div class="span7 offset1" id="home-right">
+      {% blog_recent_posts 1 as recent_posts %}
+      {% for blog_post in recent_posts %}
+      </h3><i>{{blog_post.publish_date}}</i></h3>
+      <h2>{{blog_post.title}}</h2>
+      {{blog_post.description|safe}}
+      <a href="{{ blog_post.get_absolute_url }}">Read more</a>
+      {% endfor %}
+      </div>
 	<div id="infoWindowTemplate">
 	  <div class="infoWindow">
 	    <div style="float: left;">
